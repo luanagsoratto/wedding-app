@@ -4,488 +4,183 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ana & Bruno — Setembro 2025</title>
+<title>Luana & Diego — 06.09.2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --sand: #e8dcc8;
-    --dune: #c9b99a;
-    --terracotta: #b5714a;
-    --terra-light: #d4906a;
-    --sage: #7a8c72;
-    --ocean: #4a7a8c;
-    --cream: #f5f0e8;
-    --dark: #2d2418;
-    --text: #3d3020;
+    --areia:    #E8D9B5;
+    --azul:     #6F95A8;
+    --salmon:   #E08A7C;
+    --caramelo: #9C7A57;
+    --amarelo:  #E3B85A;
+    --cream:    #faf7f2;
+    --dark:     #2d2418;
+    --text:     #3d3020;
+    --muted:    #7a6e5f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--text); min-height:100vh; overflow-x:hidden; }
+  body::before {
+    content:''; position:fixed; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events:none; z-index:1000; opacity:0.4;
   }
 
-- { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-font-family: ‘Jost’, sans-serif;
-background: var(–cream);
-color: var(–text);
-min-height: 100vh;
-overflow-x: hidden;
-}
-
-/* ── GRAIN OVERLAY ── */
-body::before {
-content: ‘’;
-position: fixed;
-inset: 0;
-background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 200 200’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’ opacity=‘0.04’/%3E%3C/svg%3E”);
-pointer-events: none;
-z-index: 1000;
-opacity: 0.5;
-}
-
-/* ── HERO ── */
+/* HERO */
 .hero {
-position: relative;
-min-height: 100svh;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 2rem;
-background: linear-gradient(170deg, #c9b99a 0%, #e8dcc8 40%, #d4c4a8 70%, #b8a888 100%);
-overflow: hidden;
+position:relative; min-height:100svh;
+display:flex; flex-direction:column;
+align-items:center; justify-content:flex-end;
+text-align:center; overflow:hidden;
+background:linear-gradient(160deg,#c8dce6 0%,#E8D9B5 100%);
 }
+.hero-img {
+position:absolute; top:0; left:50%; transform:translateX(-50%);
+width:100%; max-width:520px; height:65%;
+object-fit:cover; object-position:center top; opacity:0.9;
+}
+.hero-overlay {
+position:absolute; inset:0;
+background:linear-gradient(to bottom,rgba(200,220,230,0.05) 0%,rgba(232,217,181,0.45) 55%,rgba(250,247,242,0.97) 83%,var(–cream) 100%);
+}
+.hero-content { position:relative; z-index:2; padding:2rem 2rem 3.5rem; width:100%; }
+.hero-phrase { font-family:‘Cormorant Garamond’,serif; font-style:italic; font-size:0.8rem; letter-spacing:0.1em; color:var(–caramelo); line-height:1.65; margin-bottom:1.4rem; text-transform:uppercase; animation:fadeUp 1s ease 0.1s both; }
+.hero h1 { font-family:‘Cormorant Garamond’,serif; font-weight:300; font-size:clamp(3.2rem,11vw,6.5rem); line-height:0.88; color:var(–dark); animation:fadeUp 1s ease 0.2s both; }
+.hero h1 em { font-style:italic; color:var(–salmon); display:block; }
+.hero-ampersand { font-family:‘Cormorant Garamond’,serif; font-style:italic; font-size:2rem; color:var(–areia); margin:0.3rem 0; display:block; animation:fadeUp 1s ease 0.3s both; }
+.hero-divider { width:50px; height:1px; background:var(–caramelo); margin:1.2rem auto; opacity:0.5; animation:fadeUp 1s ease 0.4s both; }
+.hero-sub { font-size:0.72rem; letter-spacing:0.28em; text-transform:uppercase; color:var(–azul); font-weight:300; animation:fadeUp 1s ease 0.5s both; }
+.hero-location { font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(–muted); margin-top:0.4rem; font-weight:300; animation:fadeUp 1s ease 0.55s both; }
+.countdown { display:flex; justify-content:center; gap:1.5rem; margin:1.8rem 0 0; animation:fadeUp 1s ease 0.7s both; }
+.count-item { text-align:center; }
+.count-num { font-family:‘Cormorant Garamond’,serif; font-size:2.8rem; font-weight:300; color:var(–salmon); line-height:1; display:block; }
+.count-label { font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(–azul); display:block; margin-top:0.3rem; }
 
-.hero-waves {
-position: absolute;
-bottom: 0; left: 0; right: 0;
-height: 120px;
-overflow: hidden;
-}
-.hero-waves svg { width: 100%; height: 100%; }
+/* WELCOME */
+.welcome-banner { background:white; border-top:3px solid var(–areia); padding:2rem 1.5rem; text-align:center; }
+.welcome-banner p { font-family:‘Cormorant Garamond’,serif; font-size:1rem; color:var(–muted); line-height:1.85; font-weight:300; max-width:560px; margin:0 auto; }
 
-.hero-top-deco {
-position: absolute;
-top: 0; left: 0; right: 0;
-height: 80px;
-overflow: hidden;
-opacity: 0.3;
-}
+/* CHILDREN */
+.children-wrap { padding:1rem 1.5rem; max-width:680px; margin:0 auto; }
+.children-notice { background:linear-gradient(135deg,#fdf6ee,#f5ede0); border:1px solid var(–areia); border-radius:2px; padding:1.2rem 1.4rem; display:flex; gap:1rem; align-items:flex-start; }
+.children-notice-icon { font-size:1.3rem; flex-shrink:0; margin-top:0.1rem; }
+.children-notice p { font-size:0.78rem; color:var(–muted); line-height:1.65; font-weight:300; }
 
-.botanical {
-position: absolute;
-opacity: 0.12;
-pointer-events: none;
-}
-.botanical-left {
-left: -30px; top: 50%;
-transform: translateY(-50%);
-font-size: 180px;
-line-height: 1;
-filter: blur(1px);
-}
-.botanical-right {
-right: -30px; top: 40%;
-transform: translateY(-50%) scaleX(-1);
-font-size: 160px;
-line-height: 1;
-filter: blur(1px);
-}
-.botanical-top { top: 10px; left: 50%; transform: translateX(-50%); font-size: 60px; }
+/* NAV */
+nav { position:sticky; top:0; z-index:100; background:rgba(250,247,242,0.94); backdrop-filter:blur(12px); border-bottom:1px solid var(–areia); }
+.nav-inner { display:flex; overflow-x:auto; scrollbar-width:none; }
+.nav-inner::-webkit-scrollbar { display:none; }
+.nav-btn { background:none; border:none; padding:0.9rem 0.85rem; font-family:‘Jost’,sans-serif; font-size:0.6rem; font-weight:400; letter-spacing:0.16em; text-transform:uppercase; color:var(–text); cursor:pointer; white-space:nowrap; border-bottom:2px solid transparent; transition:all 0.2s; opacity:0.55; }
+.nav-btn.active, .nav-btn:hover { color:var(–salmon); border-bottom-color:var(–salmon); opacity:1; }
 
-.date-badge {
-display: inline-block;
-border: 1px solid var(–terracotta);
-color: var(–terracotta);
-font-family: ‘Jost’, sans-serif;
-font-weight: 300;
-font-size: 0.7rem;
-letter-spacing: 0.3em;
-text-transform: uppercase;
-padding: 0.4rem 1.2rem;
-margin-bottom: 1.5rem;
-animation: fadeUp 1s ease both;
-}
+/* SECTIONS */
+.section { display:none; padding:3rem 1.5rem 5rem; max-width:680px; margin:0 auto; animation:fadeUp 0.4s ease; }
+.section.active { display:block; }
+.section-header { text-align:center; margin-bottom:2.5rem; }
+.section-label { font-size:0.62rem; letter-spacing:0.3em; text-transform:uppercase; color:var(–salmon); font-weight:400; display:block; margin-bottom:0.6rem; }
+.section-title { font-family:‘Cormorant Garamond’,serif; font-size:2.3rem; font-weight:300; color:var(–dark); line-height:1.1; }
+.section-title em { font-style:italic; color:var(–salmon); }
+.section-deco { width:40px; height:1px; background:var(–areia); margin:1rem auto 0; }
 
-.hero h1 {
-font-family: ‘Cormorant Garamond’, serif;
-font-weight: 300;
-font-size: clamp(3.5rem, 12vw, 7rem);
-line-height: 0.9;
-color: var(–dark);
-animation: fadeUp 1s ease 0.2s both;
-letter-spacing: -0.01em;
-}
-.hero h1 em {
-font-style: italic;
-color: var(–terracotta);
-display: block;
-}
+/* TIMELINE */
+.timeline { position:relative; padding-left:2rem; }
+.timeline::before { content:’’; position:absolute; left:0; top:8px; bottom:8px; width:1px; background:linear-gradient(to bottom,transparent,var(–areia) 10%,var(–areia) 90%,transparent); }
+.timeline-day { font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(–azul); margin:2rem 0 1rem; font-weight:400; }
+.event-card { position:relative; background:white; border-radius:2px; padding:1.2rem 1.4rem; margin-bottom:1rem; border-left:3px solid var(–areia); transition:border-color 0.2s; box-shadow:0 2px 12px rgba(45,36,24,0.05); }
+.event-card::before { content:’’; position:absolute; left:-2.5rem; top:50%; transform:translateY(-50%); width:8px; height:8px; background:var(–areia); border-radius:50%; border:2px solid var(–cream); }
+.event-card:hover { border-left-color:var(–salmon); }
+.event-time { font-size:0.68rem; letter-spacing:0.15em; color:var(–salmon); font-weight:400; text-transform:uppercase; }
+.event-name { font-family:‘Cormorant Garamond’,serif; font-size:1.3rem; font-weight:400; color:var(–dark); margin:0.2rem 0; }
+.event-desc { font-size:0.8rem; color:var(–muted); line-height:1.55; font-weight:300; }
+.event-tag { display:inline-block; font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; background:var(–cream); color:var(–azul); padding:0.15rem 0.5rem; border-radius:1px; margin-top:0.5rem; }
+.event-link { display:inline-block; font-size:0.7rem; color:var(–salmon); text-decoration:none; margin-top:0.5rem; }
+.event-link:hover { text-decoration:underline; }
 
-.hero-ampersand {
-font-family: ‘Cormorant Garamond’, serif;
-font-style: italic;
-font-size: 2rem;
-color: var(–dune);
-margin: 0.3rem 0;
-display: block;
-animation: fadeUp 1s ease 0.3s both;
-}
+/* CARDS */
+.cards-grid { display:grid; gap:1rem; }
+.info-card { background:white; border-radius:2px; overflow:hidden; box-shadow:0 2px 12px rgba(45,36,24,0.05); transition:transform 0.2s,box-shadow 0.2s; }
+.info-card:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(45,36,24,0.09); }
+.card-accent { height:4px; background:linear-gradient(90deg,var(–salmon),var(–amarelo)); }
+.card-accent.azul { background:linear-gradient(90deg,var(–azul),#8fb5c8); }
+.card-accent.caramelo { background:linear-gradient(90deg,var(–caramelo),#b89a76); }
+.card-accent.amarelo { background:linear-gradient(90deg,var(–amarelo),#eecb7a); }
+.card-body { padding:1.2rem 1.4rem; }
+.card-icon { font-size:1.4rem; margin-bottom:0.5rem; display:block; }
+.card-name { font-family:‘Cormorant Garamond’,serif; font-size:1.2rem; color:var(–dark); margin-bottom:0.3rem; }
+.card-detail { font-size:0.78rem; color:var(–muted); line-height:1.65; font-weight:300; }
+.card-tag { display:inline-block; font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(–areia); color:var(–azul); padding:0.2rem 0.6rem; border-radius:1px; margin-top:0.7rem; }
+.card-link { display:block; font-size:0.72rem; color:var(–salmon); text-decoration:none; margin-top:0.6rem; }
+.card-link:hover { text-decoration:underline; }
 
-.hero-sub {
-font-size: 0.8rem;
-letter-spacing: 0.25em;
-text-transform: uppercase;
-color: var(–sage);
-margin-top: 1.5rem;
-font-weight: 300;
-animation: fadeUp 1s ease 0.5s both;
-}
+/* CONTACTS */
+.contact-item { display:flex; align-items:flex-start; gap:0.8rem; padding:0.85rem 0; border-bottom:1px solid #f0ebe2; }
+.contact-item:last-child { border-bottom:none; }
+.contact-name { font-size:0.82rem; color:var(–dark); font-weight:400; }
+.contact-detail { font-size:0.74rem; color:var(–muted); font-weight:300; margin-top:0.1rem; }
+.contact-link { font-size:0.72rem; color:var(–salmon); text-decoration:none; display:block; margin-top:0.2rem; }
 
-.hero-divider {
-width: 60px;
-height: 1px;
-background: var(–dune);
-margin: 1.2rem auto;
-animation: fadeUp 1s ease 0.4s both;
-}
+/* DRESS CODE */
+.dresscode-header-box { background:linear-gradient(135deg,#fdf6ee,#f0e8d8); border-radius:2px; padding:1.8rem 1.5rem; text-align:center; margin-bottom:1.5rem; border:1px solid var(–areia); }
+.inspo-label { text-align:center; font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(–azul); margin:1.2rem 0 0.5rem; display:block; }
+.inspo-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; border-radius:2px; overflow:hidden; }
+.inspo-slot { aspect-ratio:3/4; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.5rem; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:300; border-radius:2px; }
+.inspo-slot span { font-size:2rem; }
 
-/* ── NAV ── */
-nav {
-position: sticky;
-top: 0;
-z-index: 100;
-background: rgba(245, 240, 232, 0.92);
-backdrop-filter: blur(12px);
-border-bottom: 1px solid var(–sand);
-padding: 0;
-}
+/* PIX */
+.pix-box { background:white; border-radius:2px; padding:1.5rem; text-align:center; box-shadow:0 2px 12px rgba(45,36,24,0.05); border-top:4px solid var(–salmon); margin-top:1.5rem; }
+.pix-key { font-family:‘Cormorant Garamond’,serif; font-size:1.1rem; color:var(–dark); background:var(–cream); padding:0.6rem 1rem; border-radius:2px; margin:0.8rem 0; word-break:break-all; letter-spacing:0.05em; }
+.copy-btn { background:var(–salmon); color:white; border:none; padding:0.6rem 1.5rem; font-family:‘Jost’,sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer; border-radius:1px; transition:opacity 0.2s; margin-top:0.5rem; }
+.copy-btn:hover { opacity:0.85; }
+.copy-feedback { font-size:0.72rem; color:var(–azul); margin-top:0.5rem; height:1rem; }
 
-.nav-inner {
-display: flex;
-justify-content: center;
-gap: 0;
-overflow-x: auto;
-scrollbar-width: none;
+/* NOSSA HISTÓRIA */
+.story-block { margin-bottom:2.5rem; }
+.story-text {
+font-family:‘Cormorant Garamond’,serif;
+font-size:1.05rem; line-height:1.8;
+color:var(–text); margin-bottom:1rem;
+font-weight:300;
 }
-.nav-inner::-webkit-scrollbar { display: none; }
+.story-text strong { font-weight:400; color:var(–salmon); }
+.story-img {
+width:100%; border-radius:2px;
+object-fit:cover;
+box-shadow:0 4px 20px rgba(45,36,24,0.1);
+display:block;
+}
+.story-img-pair { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:1rem; }
+.story-img-pair .story-img { height:220px; }
+.story-chapter {
+font-size:0.62rem; letter-spacing:0.3em; text-transform:uppercase;
+color:var(–salmon); font-weight:400; display:block;
+margin-bottom:0.5rem; margin-top:2rem;
+}
+.story-divider { width:30px; height:1px; background:var(–areia); margin:1.5rem 0; }
 
-.nav-btn {
-background: none;
-border: none;
-padding: 1rem 1.2rem;
-font-family: ‘Jost’, sans-serif;
-font-size: 0.72rem;
-font-weight: 400;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: var(–text);
-cursor: pointer;
-white-space: nowrap;
-border-bottom: 2px solid transparent;
-transition: all 0.2s;
-opacity: 0.6;
+/* RECADOS */
+.recado-form { background:white; border-radius:2px; padding:1.5rem; box-shadow:0 2px 12px rgba(45,36,24,0.05); margin-bottom:1.5rem; }
+.recado-input {
+width:100%; border:1px solid var(–areia); border-radius:2px;
+padding:0.8rem 1rem; font-family:‘Jost’,sans-serif;
+font-size:0.82rem; color:var(–text); background:var(–cream);
+margin-bottom:0.8rem; resize:none;
+transition:border-color 0.2s;
 }
-.nav-btn.active, .nav-btn:hover {
-color: var(–terracotta);
-border-bottom-color: var(–terracotta);
-opacity: 1;
-}
+.recado-input:focus { outline:none; border-color:var(–salmon); }
+.recado-btn { background:var(–salmon); color:white; border:none; padding:0.7rem 1.5rem; font-family:‘Jost’,sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer; border-radius:1px; transition:opacity 0.2s; width:100%; }
+.recado-btn:hover { opacity:0.85; }
+.recado-card { background:white; border-radius:2px; padding:1.2rem 1.4rem; margin-bottom:1rem; border-left:3px solid var(–areia); box-shadow:0 2px 12px rgba(45,36,24,0.05); }
+.recado-name { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(–salmon); margin-bottom:0.4rem; }
+.recado-msg { font-family:‘Cormorant Garamond’,serif; font-size:1rem; color:var(–text); line-height:1.6; font-weight:300; font-style:italic; }
 
-/* ── SECTIONS ── */
-.section {
-display: none;
-padding: 3rem 1.5rem 5rem;
-max-width: 680px;
-margin: 0 auto;
-animation: fadeUp 0.5s ease;
-}
-.section.active { display: block; }
+.subsection-title { font-family:‘Cormorant Garamond’,serif; font-size:1.4rem; font-weight:300; color:var(–dark); margin:2rem 0 1rem; padding-bottom:0.4rem; border-bottom:1px solid var(–areia); }
 
-.section-header {
-text-align: center;
-margin-bottom: 2.5rem;
-}
-.section-label {
-font-size: 0.65rem;
-letter-spacing: 0.3em;
-text-transform: uppercase;
-color: var(–terracotta);
-font-weight: 400;
-display: block;
-margin-bottom: 0.6rem;
-}
-.section-title {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 2.4rem;
-font-weight: 300;
-color: var(–dark);
-line-height: 1.1;
-}
-.section-title em { font-style: italic; color: var(–terracotta); }
-.section-deco {
-width: 40px; height: 1px;
-background: var(–dune);
-margin: 1rem auto 0;
-}
+.footer-note { text-align:center; padding:2.5rem 1.5rem; font-family:‘Cormorant Garamond’,serif; font-style:italic; font-size:1rem; color:var(–caramelo); border-top:1px solid var(–areia); line-height:1.8; }
 
-/* ── TIMELINE / SCHEDULE ── */
-.timeline { position: relative; padding-left: 2rem; }
-.timeline::before {
-content: ‘’;
-position: absolute;
-left: 0; top: 8px; bottom: 8px;
-width: 1px;
-background: linear-gradient(to bottom, transparent, var(–dune) 10%, var(–dune) 90%, transparent);
-}
+.fab { position:fixed; bottom:2rem; right:1.5rem; width:44px; height:44px; background:var(–salmon); color:white; border:none; border-radius:50%; font-size:1rem; cursor:pointer; box-shadow:0 4px 16px rgba(224,138,124,0.4); display:none; align-items:center; justify-content:center; transition:transform 0.2s; z-index:200; }
+.fab:hover { transform:scale(1.05); }
 
-.timeline-day {
-font-size: 0.68rem;
-letter-spacing: 0.25em;
-text-transform: uppercase;
-color: var(–sage);
-margin: 2rem 0 1rem;
-font-weight: 400;
-}
-
-.event-card {
-position: relative;
-background: white;
-border-radius: 2px;
-padding: 1.2rem 1.4rem;
-margin-bottom: 1rem;
-border-left: 3px solid var(–sand);
-transition: border-color 0.2s;
-box-shadow: 0 2px 12px rgba(45,36,24,0.06);
-}
-.event-card::before {
-content: ‘’;
-position: absolute;
-left: -2.5rem;
-top: 50%; transform: translateY(-50%);
-width: 8px; height: 8px;
-background: var(–dune);
-border-radius: 50%;
-border: 2px solid var(–cream);
-}
-.event-card:hover { border-left-color: var(–terracotta); }
-
-.event-time {
-font-size: 0.68rem;
-letter-spacing: 0.15em;
-color: var(–terracotta);
-font-weight: 400;
-text-transform: uppercase;
-}
-.event-name {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 1.3rem;
-font-weight: 400;
-color: var(–dark);
-margin: 0.2rem 0;
-}
-.event-desc {
-font-size: 0.8rem;
-color: #7a6e5f;
-line-height: 1.5;
-font-weight: 300;
-}
-.event-tag {
-display: inline-block;
-font-size: 0.6rem;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-background: var(–cream);
-color: var(–sage);
-padding: 0.15rem 0.5rem;
-border-radius: 1px;
-margin-top: 0.5rem;
-}
-
-/* ── CARDS GRID ── */
-.cards-grid {
-display: grid;
-gap: 1rem;
-}
-
-.info-card {
-background: white;
-border-radius: 2px;
-overflow: hidden;
-box-shadow: 0 2px 12px rgba(45,36,24,0.06);
-transition: transform 0.2s, box-shadow 0.2s;
-}
-.info-card:hover {
-transform: translateY(-2px);
-box-shadow: 0 6px 24px rgba(45,36,24,0.1);
-}
-
-.card-accent {
-height: 4px;
-background: linear-gradient(90deg, var(–terracotta), var(–terra-light));
-}
-.card-accent.sage { background: linear-gradient(90deg, var(–sage), #9aad92); }
-.card-accent.ocean { background: linear-gradient(90deg, var(–ocean), #6a9aac); }
-
-.card-body { padding: 1.2rem 1.4rem; }
-
-.card-icon { font-size: 1.4rem; margin-bottom: 0.5rem; display: block; }
-.card-name {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 1.2rem;
-color: var(–dark);
-margin-bottom: 0.3rem;
-}
-.card-detail {
-font-size: 0.78rem;
-color: #7a6e5f;
-line-height: 1.6;
-font-weight: 300;
-}
-.card-tag {
-display: inline-block;
-font-size: 0.6rem;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-border: 1px solid var(–sand);
-color: var(–sage);
-padding: 0.2rem 0.6rem;
-border-radius: 1px;
-margin-top: 0.7rem;
-}
-.card-link {
-display: block;
-font-size: 0.72rem;
-color: var(–terracotta);
-text-decoration: none;
-margin-top: 0.6rem;
-letter-spacing: 0.05em;
-}
-.card-link:hover { text-decoration: underline; }
-
-/* ── GALLERY ── */
-.gallery-note {
-text-align: center;
-font-size: 0.78rem;
-color: #7a6e5f;
-font-weight: 300;
-line-height: 1.6;
-margin-bottom: 2rem;
-font-family: ‘Cormorant Garamond’, serif;
-font-style: italic;
-font-size: 1rem;
-}
-.gallery-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 0.5rem;
-}
-.gallery-item {
-aspect-ratio: 1;
-background: var(–sand);
-border-radius: 2px;
-overflow: hidden;
-position: relative;
-cursor: pointer;
-transition: opacity 0.2s;
-}
-.gallery-item:hover { opacity: 0.9; }
-.gallery-item:first-child { grid-column: span 2; aspect-ratio: 2/1; }
-
-.gallery-placeholder {
-width: 100%;
-height: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 0.4rem;
-color: var(–dune);
-font-size: 0.7rem;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-}
-.gallery-placeholder span { font-size: 1.8rem; }
-
-.upload-area {
-border: 1px dashed var(–dune);
-border-radius: 2px;
-padding: 2.5rem 1.5rem;
-text-align: center;
-margin-top: 1rem;
-cursor: pointer;
-transition: border-color 0.2s, background 0.2s;
-}
-.upload-area:hover {
-border-color: var(–terracotta);
-background: rgba(181,113,74,0.03);
-}
-.upload-area p {
-font-size: 0.78rem;
-color: #7a6e5f;
-font-weight: 300;
-margin-top: 0.5rem;
-}
-
-/* ── COUNTDOWN ── */
-.countdown {
-display: flex;
-justify-content: center;
-gap: 1.5rem;
-margin: 2rem 0;
-}
-.count-item { text-align: center; }
-.count-num {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 3rem;
-font-weight: 300;
-color: var(–terracotta);
-line-height: 1;
-display: block;
-}
-.count-label {
-font-size: 0.6rem;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: var(–sage);
-display: block;
-margin-top: 0.3rem;
-}
-
-/* ── FOOTER ── */
-.footer-note {
-text-align: center;
-padding: 2rem 1.5rem;
-font-family: ‘Cormorant Garamond’, serif;
-font-style: italic;
-font-size: 0.95rem;
-color: var(–dune);
-border-top: 1px solid var(–sand);
-}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeUp {
-from { opacity: 0; transform: translateY(16px); }
-to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ── SCROLL TO TOP BTN ── */
-.fab {
-position: fixed;
-bottom: 2rem; right: 1.5rem;
-width: 44px; height: 44px;
-background: var(–terracotta);
-color: white;
-border: none;
-border-radius: 50%;
-font-size: 1rem;
-cursor: pointer;
-box-shadow: 0 4px 16px rgba(181,113,74,0.35);
-display: none;
-align-items: center;
-justify-content: center;
-transition: transform 0.2s;
-z-index: 200;
-}
-.fab:hover { transform: scale(1.05); }
+@keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 </style>
 
 </head>
@@ -493,46 +188,53 @@ z-index: 200;
 
 <!-- HERO -->
 
-<section class="hero" id="hero">
-  <div class="botanical botanical-left">🌿</div>
-  <div class="botanical botanical-right">🌿</div>
-
-<span class="date-badge">Setembro · 2025 · Litoral</span>
-
-  <h1>
-    Ana
-    <span class="hero-ampersand">&</span>
-    <em>Bruno</em>
-  </h1>
-
-  <div class="hero-divider"></div>
-  <p class="hero-sub">✦ Destination Wedding ✦</p>
-
-  <!-- Countdown -->
-
-  <div class="countdown" id="countdown">
-    <div class="count-item"><span class="count-num" id="cd-days">--</span><span class="count-label">dias</span></div>
-    <div class="count-item"><span class="count-num" id="cd-hrs">--</span><span class="count-label">horas</span></div>
-    <div class="count-item"><span class="count-num" id="cd-min">--</span><span class="count-label">min</span></div>
-    <div class="count-item"><span class="count-num" id="cd-sec">--</span><span class="count-label">seg</span></div>
-  </div>
-
-  <div class="hero-waves">
-    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" fill="none">
-      <path d="M0,40 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,80 L0,80 Z" fill="#f5f0e8" opacity="0.6"/>
-      <path d="M0,55 C300,20 600,70 900,30 C1050,15 1150,50 1200,45 L1200,80 L0,80 Z" fill="#f5f0e8"/>
-    </svg>
+<section class="hero">
+  <img class="hero-img" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241529/IMG_2007_l0tg1i.jpg" alt="Luana e Diego" onerror="this.style.display='none'">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-phrase">Do infinito do mar à fantasia do carnaval,<br>encontramos o nosso para sempre</p>
+    <h1>Luana<span class="hero-ampersand">&</span><em>Diego</em></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">✦ Destination Wedding ✦</p>
+    <p class="hero-location">Kauli Seadi Water Sports Club · São Miguel do Gostoso · RN</p>
+    <div class="countdown" id="countdown">
+      <div class="count-item"><span class="count-num" id="cd-days">--</span><span class="count-label">dias</span></div>
+      <div class="count-item"><span class="count-num" id="cd-hrs">--</span><span class="count-label">horas</span></div>
+      <div class="count-item"><span class="count-num" id="cd-min">--</span><span class="count-label">min</span></div>
+      <div class="count-item"><span class="count-num" id="cd-sec">--</span><span class="count-label">seg</span></div>
+    </div>
   </div>
 </section>
+
+<!-- WELCOME -->
+
+<div class="welcome-banner">
+  <p>Bem-vindos ao nosso app de casamento! 🤍<br><br>
+  Aqui vocês encontram todas as informações importantes: detalhes da cerimônia, das festas, dicas de hospedagem, trajes e presentes.<br><br>
+  Estamos muito felizes e contamos com a presença de todos nesse dia especial!</p>
+</div>
+
+<!-- CHILDREN -->
+
+<div class="children-wrap">
+  <div class="children-notice">
+    <span class="children-notice-icon">🤍</span>
+    <p>Amamos crianças, mas nossa celebração não terá estrutura para recebê-las. Queremos que os papais aproveitem esse momento com tranquilidade, então o convite é especialmente para vocês. Esperamos que, com antecedência, todos consigam se organizar.</p>
+  </div>
+</div>
 
 <!-- NAV -->
 
 <nav>
   <div class="nav-inner">
-    <button class="nav-btn active" onclick="showTab('programacao', this)">Programação</button>
-    <button class="nav-btn" onclick="showTab('hospedagem', this)">Hospedagem</button>
-    <button class="nav-btn" onclick="showTab('passeios', this)">Passeios</button>
-    <button class="nav-btn" onclick="showTab('galeria', this)">Galeria</button>
+    <button class="nav-btn active" onclick="showTab('programacao',this)">Programação</button>
+    <button class="nav-btn" onclick="showTab('viagem',this)">Como Chegar</button>
+    <button class="nav-btn" onclick="showTab('passeios',this)">O que Fazer</button>
+    <button class="nav-btn" onclick="showTab('dresscode',this)">Trajes</button>
+    <button class="nav-btn" onclick="showTab('beleza',this)">Beleza</button>
+    <button class="nav-btn" onclick="showTab('recados',this)">Recados</button>
+    <button class="nav-btn" onclick="showTab('presentes',this)">Presentes</button>
+    <button class="nav-btn" onclick="showTab('historia',this)">Nossa História</button>
   </div>
 </nav>
 
@@ -544,329 +246,439 @@ z-index: 200;
     <h2 class="section-title">Programação</h2>
     <div class="section-deco"></div>
   </div>
-
   <div class="timeline">
-
-```
-<p class="timeline-day">Sexta-feira · 5 de setembro</p>
-
-<div class="event-card">
-  <p class="event-time">18h00</p>
-  <p class="event-name">Chegada dos Convidados</p>
-  <p class="event-desc">Check-in nos hotéis e pousadas. Aproveite para descansar e conhecer a região.</p>
-  <span class="event-tag">livre</span>
-</div>
-
-<div class="event-card">
-  <p class="event-time">20h00</p>
-  <p class="event-name">Jantar de Boas-Vindas</p>
-  <p class="event-desc">Jantar íntimo com a família e amigos mais próximos. Local: Restaurante Mar & Terra.</p>
-  <span class="event-tag">convidados especiais</span>
-</div>
-
-<p class="timeline-day">Sábado · 6 de setembro · O grande dia 🌸</p>
-
-<div class="event-card">
-  <p class="event-time">10h00</p>
-  <p class="event-name">Café da Manhã Especial</p>
-  <p class="event-desc">Café coletivo na pousada com frutas tropicais e delícias locais.</p>
-  <span class="event-tag">todos</span>
-</div>
-
-<div class="event-card">
-  <p class="event-time">15h30</p>
-  <p class="event-name">Cerimônia</p>
-  <p class="event-desc">Cerimônia ao ar livre na beira-mar. Vista branca ou tons claros — dress code boho chic.</p>
-  <span class="event-tag">traje: boho chic</span>
-</div>
-
-<div class="event-card">
-  <p class="event-time">17h00</p>
-  <p class="event-name">Cocktail & Golden Hour</p>
-  <p class="event-desc">Drinks e canapês enquanto curtimos o pôr do sol mais lindo do ano juntos.</p>
-  <span class="event-tag">praia</span>
-</div>
-
-<div class="event-card">
-  <p class="event-time">19h30</p>
-  <p class="event-name">Festa & Jantar</p>
-  <p class="event-desc">Jantar, bolo, muita dança e celebração até a madrugada. Open bar e buffet completo.</p>
-  <span class="event-tag">todos</span>
-</div>
-
-<p class="timeline-day">Domingo · 7 de setembro</p>
-
-<div class="event-card">
-  <p class="event-time">10h00</p>
-  <p class="event-name">Brunch de Despedida</p>
-  <p class="event-desc">Último encontro para matar a saudade antes de cada um voltar para casa.</p>
-  <span class="event-tag">todos</span>
-</div>
-```
-
+    <p class="timeline-day">Sexta-feira · 04 de setembro</p>
+    <div class="event-card">
+      <p class="event-time">19h00</p>
+      <p class="event-name">Jantar de Boas-Vindas</p>
+      <p class="event-desc">Quintal Pizzaria · Rua da Xepa. O primeiro encontro de todos em São Miguel! Venha se aquecer com uma boa pizza e muita conversa.</p>
+      <span class="event-tag">pré-wedding</span>
+      <a class="event-link" href="https://maps.google.com/?q=Quintal+Pizzaria+São+Miguel+do+Gostoso" target="_blank">→ Ver no Maps</a>
+    </div>
+    <p class="timeline-day">Sábado · 05 de setembro</p>
+    <div class="event-card">
+      <p class="event-time">15h30</p>
+      <p class="event-name">Sunset Party</p>
+      <p class="event-desc">Idílico Village Paradise. Drinks, música e o pôr do sol mais bonito do Rio Grande do Norte.</p>
+      <span class="event-tag">pré-wedding</span>
+      <a class="event-link" href="https://maps.google.com/?q=Idílico+Village+Paradise+São+Miguel+do+Gostoso" target="_blank">→ Ver no Maps</a>
+    </div>
+    <p class="timeline-day">Domingo · 06 de setembro · O grande dia 🌸</p>
+    <div class="event-card">
+      <p class="event-time">15h30</p>
+      <p class="event-name">Cerimônia</p>
+      <p class="event-desc">Kauli Seadi Water Sports Club. Com o mar de São Miguel ao fundo, Luana e Diego dirão o seu sim. Chegue com antecedência!</p>
+      <span class="event-tag">cerimônia</span>
+      <a class="event-link" href="https://maps.google.com/?q=Kauli+Seadi+Water+Sports+Club+São+Miguel+do+Gostoso" target="_blank">→ Ver no Maps</a>
+    </div>
+    <div class="event-card">
+      <p class="event-time">Após a cerimônia</p>
+      <p class="event-name">Recepção & Festa</p>
+      <p class="event-desc">No mesmo local. Os noivos receberão os convidados — jantar, bolo, dança e muita celebração!</p>
+      <span class="event-tag">festa</span>
+    </div>
   </div>
 </div>
 
-<!-- HOSPEDAGEM -->
+<!-- COMO CHEGAR & HOSPEDAGEM -->
 
-<div class="section" id="hospedagem">
+<div class="section" id="viagem">
   <div class="section-header">
-    <span class="section-label">✦ onde ficar</span>
-    <h2 class="section-title">Hospedagem</h2>
+    <span class="section-label">✦ logística</span>
+    <h2 class="section-title">Como Chegar & <em>Hospedagem</em></h2>
     <div class="section-deco"></div>
   </div>
 
+  <h3 class="subsection-title">✈️ Como Chegar</h3>
+  <div class="info-card" style="margin-bottom:1.5rem;">
+    <div class="card-accent azul"></div>
+    <div class="card-body">
+      <p class="card-detail">O aeroporto mais próximo é o <strong>Aeroporto Internacional de Natal – Governador Aluízio Alves (NAT)</strong>.<br><br>
+      Do aeroporto até São Miguel do Gostoso são aproximadamente <strong>1h30 de carro</strong>.<br><br>
+      Nossa sugestão é alugar um carro no aeroporto ou utilizar serviços de transfer. Vale combinar com outros convidados para rachar o traslado!</p>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">🏡 Hospedagem</h3>
+  <div class="info-card" style="margin-bottom:1rem;background:linear-gradient(135deg,#fdf6ee,#f0e8d8);">
+    <div class="card-body">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--salmon);font-size:1.05rem;">Dica dos noivos ✨</p>
+      <p class="card-detail" style="margin-top:0.4rem">São Miguel é um vilarejo charmoso e tranquilo. De carro é fácil se locomover; a pé as distâncias podem ser maiores. Reserve com antecedência — setembro é alta temporada!</p>
+    </div>
+  </div>
   <div class="cards-grid">
-
-```
-<div class="info-card">
-  <div class="card-accent"></div>
-  <div class="card-body">
-    <span class="card-icon">🌺</span>
-    <p class="card-name">Pousada Villa Maresia</p>
-    <p class="card-detail">Pousada boutique a 200m da praia, onde a cerimônia acontece. Ambiente charmoso com jardins tropicais e café da manhã incluído. Temos bloqueio de quartos com desconto para os convidados.</p>
-    <span class="card-tag">⭐ recomendada pelos noivos</span>
-    <a class="card-link" href="#">→ Ver no Google Maps</a>
+    <div class="info-card">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <span class="card-icon">🌺</span>
+        <p class="card-name">Bangalô Kauli Seadi</p>
+        <p class="card-detail">Fale com a recepção e avise que é convidado de Luana e Diego para condições especiais!</p>
+        <span class="card-tag">⭐ próximo à cerimônia</span>
+        <a class="card-link" href="tel:+5584998076437">→ (84) 99807-6437</a>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="card-accent azul"></div>
+      <div class="card-body">
+        <span class="card-icon">🏡</span>
+        <p class="card-name">Jaya Pousada Boutique</p>
+        <p class="card-detail">Pousada charmosa e bem localizada.</p>
+        <span class="card-tag">boutique</span>
+        <a class="card-link" href="https://instagram.com/jayapousada_" target="blank">→ @jayapousada</a>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="card-accent caramelo"></div>
+      <div class="card-body">
+        <span class="card-icon">🌿</span>
+        <p class="card-name">Pousada Mestizo</p>
+        <p class="card-detail">Dentro do Condomínio Monte Alegre. Linda! Fale com Rodrigo para pacotes especiais para convidados do casamento.</p>
+        <span class="card-tag">condomínio monte alegre</span>
+        <a class="card-link" href="tel:+558486081043">→ +55 84 8608-1043 (Rodrigo)</a>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="card-accent amarelo"></div>
+      <div class="card-body">
+        <span class="card-icon">🏘️</span>
+        <p class="card-name">Condomínio Monte Alegre</p>
+        <p class="card-detail">Qualquer hotel, pousada ou Airbnb dentro do condomínio é ótima opção — fica pertinho da cerimônia.</p>
+        <span class="card-tag">várias opções</span>
+        <a class="card-link" href="https://www.airbnb.com.br/s/São-Miguel-do-Gostoso" target="_blank">→ Buscar no Airbnb</a>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="info-card">
-  <div class="card-accent sage"></div>
-  <div class="card-body">
-    <span class="card-icon">🏡</span>
-    <p class="card-name">Pousada Canto do Mar</p>
-    <p class="card-detail">Opção mais tranquila, a 5 min a pé da praia. Quartos espaçosos, piscina e varanda privativa. Ótima para famílias.</p>
-    <span class="card-tag">ótimo custo-benefício</span>
-    <a class="card-link" href="#">→ Ver no Google Maps</a>
-  </div>
-</div>
-
-<div class="info-card">
-  <div class="card-accent ocean"></div>
-  <div class="card-body">
-    <span class="card-icon">🏨</span>
-    <p class="card-name">Hotel Atlântico Resort</p>
-    <p class="card-detail">Para quem prefere estrutura completa de hotel com spa, academia e restaurante próprio. A 10 min do local da festa.</p>
-    <span class="card-tag">completo</span>
-    <a class="card-link" href="#">→ Ver no Google Maps</a>
-  </div>
-</div>
-
-<div class="info-card" style="background: linear-gradient(135deg, #f5f0e8, #ede4d3);">
-  <div class="card-body">
-    <p class="card-name" style="font-family:'Cormorant Garamond',serif; font-style:italic; color: var(--terracotta);">Dica dos noivos ✨</p>
-    <p class="card-detail">Reserve com antecedência! Setembro é alta temporada. Se tiver dúvidas sobre qual hospedagem escolher, nos chame no WhatsApp — adoramos ajudar.</p>
-  </div>
-</div>
-```
-
-  </div>
-</div>
-
-<!-- PASSEIOS -->
+<!-- O QUE FAZER -->
 
 <div class="section" id="passeios">
   <div class="section-header">
-    <span class="section-label">✦ o que fazer por aqui</span>
-    <h2 class="section-title">Passeios & <em>Restaurantes</em></h2>
+    <span class="section-label">✦ aproveite a cidade</span>
+    <h2 class="section-title">O que <em>Fazer</em></h2>
     <div class="section-deco"></div>
   </div>
+  <p style="text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--muted);margin-bottom:2rem;line-height:1.6;">São Miguel do Gostoso é um dos lugares mais lindos do Brasil 🌊<br>Aproveite cada momento!</p>
 
-  <p style="text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:#7a6e5f; margin-bottom:2rem; line-height:1.6;">
-    Aproveite para explorar e se apaixonar pelo lugar que nos roubou o coração 🌊
-  </p>
-
-  <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--terracotta); margin-bottom:1rem; text-align:center;">🍽 Onde comer</p>
-
+  <p style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--salmon);margin-bottom:1rem;">🍽 Onde comer</p>
   <div class="cards-grid">
     <div class="info-card">
       <div class="card-accent"></div>
-      <div class="card-body">
-        <span class="card-icon">🦐</span>
-        <p class="card-name">Frutos do Mar do Zé</p>
-        <p class="card-detail">O melhor frutos do mar da região. Moqueca imperdível. Sempre cheio — chegue cedo ou faça reserva.</p>
-        <span class="card-tag">almoço · frutos do mar</span>
-      </div>
+      <div class="card-body"><span class="card-icon">🍕</span><p class="card-name">Quintal Pizzaria</p><p class="card-detail">Nosso ponto de encontro na sexta! Pizzas artesanais em ambiente gostoso.</p><span class="card-tag">jantar · sexta</span><a class="card-link" href="https://maps.google.com/?q=Quintal+Pizzaria+São+Miguel+do+Gostoso" target="_blank">→ Ver no Maps</a></div>
     </div>
-
-```
-<div class="info-card">
-  <div class="card-accent sage"></div>
-  <div class="card-body">
-    <span class="card-icon">🌅</span>
-    <p class="card-name">Bar do Mirante</p>
-    <p class="card-detail">Vista incrível para o mar, caipirinhas geladas e boa música. Perfeito para o pôr do sol de sexta.</p>
-    <span class="card-tag">drinks · vista panorâmica</span>
-  </div>
-</div>
-
-<div class="info-card">
-  <div class="card-accent ocean"></div>
-  <div class="card-body">
-    <span class="card-icon">☕</span>
-    <p class="card-name">Café Brisa</p>
-    <p class="card-detail">O café da manhã mais charmoso da cidade. Pães artesanais, tapiocas e sucos naturais.</p>
-    <span class="card-tag">café da manhã</span>
-  </div>
-</div>
-```
-
+    <div class="info-card">
+      <div class="card-accent azul"></div>
+      <div class="card-body"><span class="card-icon">🦐</span><p class="card-name">Frutos do Mar Locais</p><p class="card-detail">Pergunte na pousada a dica do dia — os moradores sempre sabem o melhor lugar!</p><span class="card-tag">almoço</span></div>
+    </div>
+    <div class="info-card">
+      <div class="card-accent amarelo"></div>
+      <div class="card-body"><span class="card-icon">🌅</span><p class="card-name">Idílico Village Paradise</p><p class="card-detail">Bar incrível para o pôr do sol. Nosso Sunset do sábado acontece aqui!</p><span class="card-tag">drinks · sunset</span></div>
+    </div>
   </div>
 
-  <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--terracotta); margin: 2rem 0 1rem; text-align:center;">🌿 O que fazer</p>
-
+  <p style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--salmon);margin:2rem 0 1rem;">🌿 O que fazer</p>
   <div class="cards-grid">
     <div class="info-card">
       <div class="card-accent"></div>
-      <div class="card-body">
-        <span class="card-icon">🏄</span>
-        <p class="card-name">Aula de Surf</p>
-        <p class="card-detail">Escola de surf a 5 min da pousada principal. Aulas para iniciantes às 7h e 16h. Reserve pelo Instagram deles.</p>
-        <span class="card-tag">atividade · manhã</span>
-      </div>
+      <div class="card-body"><span class="card-icon">🪁</span><p class="card-name">Kitesurf</p><p class="card-detail">São Miguel é uma das melhores praias de kitesurf do mundo — é por isso que o Kauli Seadi tem o nome dele no clube!</p><span class="card-tag">esporte · praia</span></div>
     </div>
-
-```
-<div class="info-card">
-  <div class="card-accent sage"></div>
-  <div class="card-body">
-    <span class="card-icon">🚤</span>
-    <p class="card-name">Passeio de Barco</p>
-    <p class="card-detail">Passeio pelas ilhas da região com snorkel e almoço na praia. Sai às 9h da manhã, dura o dia todo.</p>
-    <span class="card-tag">dia inteiro</span>
+    <div class="info-card">
+      <div class="card-accent azul"></div>
+      <div class="card-body"><span class="card-icon">🌊</span><p class="card-name">Praia do Maceió</p><p class="card-detail">Águas calmas e transparentes. Perfeita para um mergulho no sábado de manhã.</p><span class="card-tag">praia · passeio</span></div>
+    </div>
+    <div class="info-card">
+      <div class="card-accent caramelo"></div>
+      <div class="card-body"><span class="card-icon">🚤</span><p class="card-name">Galinhos</p><p class="card-detail">Vila de pescadores acessível só de barco, ~1h de São Miguel. Um dos lugares mais remotos e lindos do RN.</p><span class="card-tag">passeio · dia inteiro</span></div>
+    </div>
   </div>
 </div>
 
-<div class="info-card">
-  <div class="card-accent ocean"></div>
-  <div class="card-body">
-    <span class="card-icon">🌊</span>
-    <p class="card-name">Trilha da Pedra do Arco</p>
-    <p class="card-detail">Trilha de 2h com vista deslumbrante. Nível fácil/médio. Leve água e protetor solar. Vale cada passo.</p>
-    <span class="card-tag">trilha · natureza</span>
-  </div>
-</div>
-```
+<!-- TRAJES -->
 
-  </div>
-</div>
-
-<!-- GALERIA -->
-
-<div class="section" id="galeria">
+<div class="section" id="dresscode">
   <div class="section-header">
-    <span class="section-label">✦ memórias</span>
-    <h2 class="section-title">Galeria</h2>
+    <span class="section-label">✦ como se vestir</span>
+    <h2 class="section-title">Trajes</h2>
     <div class="section-deco"></div>
   </div>
 
-  <p class="gallery-note">
-    "As fotos mais bonitas são as que ainda vamos tirar juntos" 🌸
-  </p>
-
-  <div class="gallery-grid">
-    <div class="gallery-item">
-      <div class="gallery-placeholder">
-        <span>📷</span>
-        foto de destaque
-      </div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder">
-        <span>🌊</span>
-        praia
-      </div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder">
-        <span>🌸</span>
-        flores
-      </div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder">
-        <span>🌅</span>
-        pôr do sol
-      </div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder">
-        <span>💍</span>
-        aliança
-      </div>
+  <div class="info-card" style="margin-bottom:1rem;">
+    <div class="card-accent"></div>
+    <div class="card-body">
+      <span class="card-icon">👗</span>
+      <p class="card-name">Dicas para o look das mulheres</p>
+      <p class="card-detail" style="margin-top:0.5rem;">Queremos que todas se sintam lindas e confortáveis nesse dia especial!<br><br>
+      Sugerimos vestidos leves e fluidos, que combinam com o clima e a energia da festa. As cores são livres — tons vivos, alegres ou pastéis ficam perfeitos. Apenas pedimos evitar preto e branco.<br><br>
+      Para maior conforto, apostem em sandálias sem salto fino, assim vocês poderão aproveitar cada momento sem preocupações.</p>
     </div>
   </div>
 
-  <div class="upload-area" onclick="document.getElementById('fileInput').click()">
-    <span style="font-size:1.5rem">📸</span>
-    <p>Toque para adicionar fotos do casamento</p>
-    <p style="font-size:0.68rem; color: var(--dune); margin-top:0.3rem;">JPG, PNG ou HEIC · até 10MB</p>
-    <input type="file" id="fileInput" accept="image/*" multiple style="display:none" onchange="handlePhotos(event)">
+<span class="inspo-label">✦ inspirações · mulheres · liso, sem estampa</span>
+
+  <div class="inspo-grid" style="margin-bottom:1.5rem;">
+    <div class="inspo-slot" style="background:#f0e4d4;color:#9C7A57;"><span>👗</span>vestido fluido<br>liso</div>
+    <div class="inspo-slot" style="background:#e8d4cc;color:#E08A7C;"><span>🌸</span>tons alegres<br>e pastéis</div>
+  </div>
+
+  <div class="info-card" style="margin-bottom:1rem;">
+    <div class="card-accent azul"></div>
+    <div class="card-body">
+      <span class="card-icon">👔</span>
+      <p class="card-name">Dicas para o look dos homens</p>
+      <p class="card-detail" style="margin-top:0.5rem;">Queremos que todos estejam elegantes e confortáveis para celebrar ao ar livre.<br><br>
+      Apostem em tons claros e tecidos leves, como linho e algodão. Camisas elegantes são super bem-vindas, mas podem deixar o blazer e o terno em casa.<br><br>
+      Pedimos apenas que usem calça (sem bermuda) e deixem o boné para outro dia. Nos pés, tanto tênis quanto sapatos estão liberados — o importante é se sentir bem.</p>
+    </div>
+  </div>
+
+<span class="inspo-label">✦ inspirações · homens · azul e rosa clarinho</span>
+
+  <div class="inspo-grid" style="margin-bottom:1.5rem;">
+    <div class="inspo-slot" style="background:#c8dce6;color:#4a7a8c;"><span>👔</span>tons de azul<br>linho leve</div>
+    <div class="inspo-slot" style="background:#f2ddd9;color:#c07060;"><span>🌸</span>rosa clarinho<br>elegante</div>
+  </div>
+
+  <div class="info-card" style="background:linear-gradient(135deg,#fdf6ee,#f0e8d8);">
+    <div class="card-body">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--salmon);font-size:1rem;">☀️ Lembrete</p>
+      <p class="card-detail" style="margin-top:0.4rem;">Ah, e não esqueçam do protetor solar e óculos de sol para curtir cada momento com estilo!</p>
+    </div>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- BELEZA -->
 
-<div class="footer-note" id="footer">
-  Feito com amor para os nossos convidados especiais 🌿
+<div class="section" id="beleza">
+  <div class="section-header">
+    <span class="section-label">✦ fique ainda mais linda</span>
+    <h2 class="section-title">Maquiagem & <em>Beleza</em></h2>
+    <div class="section-deco"></div>
+  </div>
+  <div class="info-card">
+    <div class="card-body">
+      <div class="contact-item">
+        <div>
+          <p class="contact-name">Kauli Seadi Beach Hotel</p>
+          <p class="contact-detail">Se você vai ficar aqui e já confirmou com a noiva — relaxa, está resolvido! 😊</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div>
+          <p class="contact-name">Studio Samantha Sales</p>
+          <p class="contact-detail">Para quem vai ficar no Bangalô Kauli Seadi Eco-Resort</p>
+          <a class="contact-link" href="tel:+5584967359959">→ +55 84 9673-5959</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div>
+          <p class="contact-name">Alicia · Studio A</p>
+          <p class="contact-detail">Para combinar e ir ao seu hotel</p>
+          <a class="contact-link" href="tel:+5584914555704">→ +55 84 9145-5704</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div>
+          <p class="contact-name">Studio Rafaella Yanca</p>
+          <p class="contact-detail">Salão em São Miguel do Gostoso</p>
+          <a class="contact-link" href="tel:+5584949431315">→ +55 84 9494-1315</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div>
+          <p class="contact-name">Luiz Amaram</p>
+          <p class="contact-detail">De Niterói, com pequeno salão em São Miguel do Gostoso</p>
+          <a class="contact-link" href="tel:+5521998025664">→ +55 21 99802-5664</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- FAB -->
+<!-- RECADOS -->
+
+<div class="section" id="recados">
+  <div class="section-header">
+    <span class="section-label">✦ mande seu carinho</span>
+    <h2 class="section-title">Recados</h2>
+    <div class="section-deco"></div>
+  </div>
+  <p style="text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--muted);margin-bottom:2rem;line-height:1.6;">Deixe uma mensagem para os noivos 💌<br>Cada palavra vai direto ao coração deles.</p>
+
+  <div class="recado-form">
+    <input class="recado-input" type="text" id="recadoNome" placeholder="Seu nome" style="height:44px;">
+    <textarea class="recado-input" id="recadoMsg" rows="4" placeholder="Escreva seu recado para Luana e Diego..."></textarea>
+    <button class="recado-btn" onclick="enviarRecado()">Enviar recado 💌</button>
+  </div>
+
+  <div id="recadosList"></div>
+</div>
+
+<!-- PRESENTES -->
+
+<div class="section" id="presentes">
+  <div class="section-header">
+    <span class="section-label">✦ lista de presentes</span>
+    <h2 class="section-title">Presentes</h2>
+    <div class="section-deco"></div>
+  </div>
+  <div class="info-card" style="margin-bottom:1rem;">
+    <div class="card-body" style="text-align:center;padding:2rem;">
+      <span style="font-size:2rem;">💌</span>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--dark);margin:0.8rem 0;line-height:1.7;font-weight:300;">Sabemos que muitos estão fazendo um esforço para estar conosco nesse dia tão especial, e isso já é o maior presente que poderíamos receber.</p>
+      <p style="font-size:0.78rem;color:var(--muted);font-weight:300;">— Luana e Diego</p>
+    </div>
+  </div>
+  <div class="pix-box">
+    <span style="font-size:1.5rem;">🌙</span>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--dark);margin-top:0.5rem;">Contribua para a lua de mel</p>
+    <p style="font-size:0.78rem;color:var(--muted);margin-top:0.3rem;font-weight:300;">Para quem quiser ajudar a tornar a lua de mel ainda mais inesquecível 🌊</p>
+    <div class="pix-key">48 99948-9397</div>
+    <p style="font-size:0.68rem;color:var(--muted);">Pix Celular · Luana Genaro Soratto</p>
+    <button class="copy-btn" onclick="copyPix()">Copiar chave Pix</button>
+    <p class="copy-feedback" id="pixFeedback"></p>
+  </div>
+</div>
+
+<!-- NOSSA HISTÓRIA -->
+
+<div class="section" id="historia">
+  <div class="section-header">
+    <span class="section-label">✦ tudo começou assim</span>
+    <h2 class="section-title">Nossa <em>História</em></h2>
+    <div class="section-deco"></div>
+  </div>
+
+  <div class="story-block">
+    <span class="story-chapter">✦ o começo</span>
+    <p class="story-text">Nos conhecemos por aplicativo — sim, um daqueles! Mas foi o <strong>amor pelo mar</strong> e a <strong>alegria do carnaval</strong> que decidiram que a gente era pra valer.</p>
+    <img class="story-img" style="height:380px;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241529/IMG_2007_l0tg1i.jpg" alt="Nossa primeira foto">
+  </div>
+
+  <div class="story-divider"></div>
+
+  <div class="story-block">
+    <span class="story-chapter">✦ o barco do diego</span>
+    <p class="story-text">O barco do Diego virou nosso segundo lar. Foi ali, no balanço das ondas, que a gente foi descobrindo que queria <strong>navegar juntos pra sempre</strong>.</p>
+    <img class="story-img" style="height:320px;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241529/IMG_3786_zigaip.jpg" alt="Barco">
+  </div>
+
+  <div class="story-divider"></div>
+
+  <div class="story-block">
+    <span class="story-chapter">✦ o carnaval</span>
+    <p class="story-text">Nosso primeiro carnaval juntos — e a gente se jogou de verdade. Cabelo laranja, cabelo roxo, fantasia de Barbie... <strong>não tinha mais volta.</strong> 🎭</p>
+    <div class="story-img-pair">
+      <img class="story-img" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241529/IMG_4336_zea5hj.jpg" alt="Carnaval">
+      <img class="story-img" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241530/IMG_0074_y5eel4.jpg" alt="Carnaval Barbie">
+    </div>
+  </div>
+
+  <div class="story-divider"></div>
+
+  <div class="story-block">
+    <span class="story-chapter">✦ kitesurf mode on</span>
+    <p class="story-text">Casal que kitea junto, fica junto. Nossa aventura favorita, no nosso elemento favorito. <strong>No vento e no mar</strong>, sempre juntos. 🪁</p>
+    <div class="story-img-pair">
+      <img class="story-img" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241529/IMG_2569_emssoe.jpg" alt="Kite 1">
+      <img class="story-img" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241529/IMG_0797_rzdp6p.jpg" alt="Kite 2">
+    </div>
+  </div>
+
+  <div class="story-divider"></div>
+
+  <div class="story-block">
+    <span class="story-chapter">✦ e então veio a tailândia...</span>
+    <p class="story-text">Festival das Lanternas, céu iluminado, e um joelho no chão. Ela disse sim sentindo que era um sonho. <strong>Era.</strong> ✨</p>
+    <img class="story-img" style="height:400px;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241532/IMG_8567_ki6zmr.jpg" alt="Noivado">
+    <p class="story-text" style="margin-top:1rem;font-style:italic;color:var(--muted);">...e a Tailândia ficou ainda mais linda depois do sim 🌏</p>
+    <img class="story-img" style="height:320px;margin-top:0.8rem;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241530/IMG_0677_q20ftm.jpg" alt="Tailândia">
+  </div>
+
+  <div class="story-divider"></div>
+
+  <div class="story-block">
+    <span class="story-chapter">✦ nossa família</span>
+    <p class="story-text">Tom já estava, <strong>Nanda chegou</strong>, e o coração ficou completo. Nossa família de quatro patas é o amor da nossa vida. 🐾</p>
+    <img class="story-img" style="height:340px;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241531/IMG_3020_rzkdlj.jpg" alt="Tom e Nanda">
+  </div>
+
+  <div class="story-divider"></div>
+
+  <div class="story-block">
+    <span class="story-chapter">✦ casados de papel passado</span>
+    <p class="story-text">Rodeados das pessoas que mais amamos. Nossos pais, nossos irmãos — <strong>casais que são nosso exemplo todos os dias</strong>. E assim chegamos aqui, prontos para o grande dia. 💍</p>
+    <img class="story-img" style="height:340px;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241531/IMG_9999_b9o9cq.jpg" alt="Civil">
+    <img class="story-img" style="height:280px;margin-top:0.5rem;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241532/IMG_0077_gdxpyn.jpg" alt="Família">
+  </div>
+
+</div>
+
+<div class="footer-note">
+  Do infinito do mar à fantasia do carnaval, encontramos o nosso para sempre 🌿<br>
+  <span style="font-size:0.85rem;opacity:0.7;">Com carinho e alegria, Luana e Diego!</span>
+</div>
 
 <button class="fab" id="fab" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-  // ── COUNTDOWN ──
   function updateCountdown() {
-    const wedding = new Date('2025-09-06T15:30:00');
-    const now = new Date();
-    const diff = wedding - now;
+    const wedding = new Date('2026-09-06T15:30:00');
+    const diff = wedding - new Date();
     if (diff <= 0) {
-      document.getElementById('countdown').innerHTML = '<p style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:1.2rem;color:var(--terracotta)">Hoje é o grande dia! 🌸</p>';
+      document.getElementById('countdown').innerHTML = '<p style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:1.2rem;color:var(--salmon)">Hoje é o grande dia! 🌸</p>';
       return;
     }
-    const days = Math.floor(diff / 86400000);
-    const hrs  = Math.floor((diff % 86400000) / 3600000);
-    const min  = Math.floor((diff % 3600000) / 60000);
-    const sec  = Math.floor((diff % 60000) / 1000);
-    document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
-    document.getElementById('cd-hrs').textContent  = String(hrs).padStart(2,'0');
-    document.getElementById('cd-min').textContent  = String(min).padStart(2,'0');
-    document.getElementById('cd-sec').textContent  = String(sec).padStart(2,'0');
+    const d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),
+          m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+    document.getElementById('cd-days').textContent=String(d).padStart(2,'0');
+    document.getElementById('cd-hrs').textContent =String(h).padStart(2,'0');
+    document.getElementById('cd-min').textContent =String(m).padStart(2,'0');
+    document.getElementById('cd-sec').textContent =String(s).padStart(2,'0');
   }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  updateCountdown(); setInterval(updateCountdown,1000);
 
-  // ── TABS ──
-  function showTab(id, btn) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  function showTab(id,btn) {
+    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
     document.getElementById(id).classList.add('active');
     btn.classList.add('active');
-    window.scrollTo({ top: document.querySelector('nav').offsetTop - 1, behavior: 'smooth' });
+    window.scrollTo({top:document.querySelector('nav').offsetTop-1,behavior:'smooth'});
   }
 
-  // ── FAB ──
-  window.addEventListener('scroll', () => {
-    document.getElementById('fab').style.display = window.scrollY > 300 ? 'flex' : 'none';
+  window.addEventListener('scroll',()=>{
+    document.getElementById('fab').style.display=window.scrollY>300?'flex':'none';
   });
 
-  // ── GALLERY UPLOAD ──
-  function handlePhotos(e) {
-    const files = Array.from(e.target.files);
-    const grid = document.querySelector('.gallery-grid');
-    files.forEach(file => {
-      const reader = new FileReader();
-      reader.onload = ev => {
-        const item = document.createElement('div');
-        item.className = 'gallery-item';
-        item.style.backgroundImage = `url(${ev.target.result})`;
-        item.style.backgroundSize = 'cover';
-        item.style.backgroundPosition = 'center';
-        grid.appendChild(item);
-      };
-      reader.readAsDataURL(file);
+  function copyPix() {
+    navigator.clipboard.writeText('48999489397').then(()=>{
+      const fb=document.getElementById('pixFeedback');
+      fb.textContent='✓ Chave copiada!';
+      setTimeout(()=>fb.textContent='',2500);
     });
+  }
+
+  // RECADOS
+  const recados = JSON.parse(localStorage.getItem('recados')||'[]');
+  function renderRecados() {
+    const list = document.getElementById('recadosList');
+    if(recados.length===0){list.innerHTML='<p style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;color:var(--muted);font-size:0.95rem;">Seja o primeiro a deixar um recado 💌</p>';return;}
+    list.innerHTML = recados.map(r=>`
+      <div class="recado-card">
+        <p class="recado-name">${r.nome}</p>
+        <p class="recado-msg">"${r.msg}"</p>
+      </div>`).join('');
+  }
+  renderRecados();
+
+  function enviarRecado() {
+    const nome = document.getElementById('recadoNome').value.trim();
+    const msg  = document.getElementById('recadoMsg').value.trim();
+    if(!nome||!msg) return alert('Preencha seu nome e recado 💌');
+    recados.unshift({nome,msg});
+    localStorage.setItem('recados',JSON.stringify(recados));
+    document.getElementById('recadoNome').value='';
+    document.getElementById('recadoMsg').value='';
+    renderRecados();
   }
 </script>
 
