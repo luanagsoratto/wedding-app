@@ -28,31 +28,10 @@
   }
 
   /* HERO */
-  .hero {
-    position:relative;
-    width:100%;
-    text-align:center;
-    overflow:hidden;
-    background:linear-gradient(160deg,#c8dce6 0%,#E8D9B5 100%);
-  }
-  .hero-img {
-    width:100%; max-width:520px;
-    display:block; margin:0 auto;
-    object-fit:cover; object-position:center top;
-    opacity:0.92;
-    max-height:75vh;
-  }
-  .hero-overlay {
-    position:absolute; inset:0;
-    background:linear-gradient(to bottom,rgba(200,220,230,0.0) 0%,rgba(232,217,181,0.15) 60%,rgba(250,247,242,0.85) 88%,var(--cream) 100%);
-    pointer-events:none;
-  }
-  .hero-content {
-    position:absolute; top:0; left:0; right:0;
-    padding:2rem 1.5rem 0;
-    z-index:2;
-    text-align:center;
-  }
+  .hero { position:relative; width:100%; text-align:center; overflow:hidden; background:linear-gradient(160deg,#c8dce6 0%,#E8D9B5 100%); }
+  .hero-img { width:100%; max-width:520px; display:block; margin:0 auto; object-fit:cover; object-position:center top; opacity:0.92; max-height:75vh; }
+  .hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(200,220,230,0.0) 0%,rgba(232,217,181,0.15) 60%,rgba(250,247,242,0.85) 88%,var(--cream) 100%); pointer-events:none; }
+  .hero-content { position:absolute; top:0; left:0; right:0; padding:2rem 1.5rem 0; z-index:2; text-align:center; }
   .hero-phrase { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.78rem; letter-spacing:0.1em; color:var(--caramelo); line-height:1.65; margin-bottom:1.2rem; text-transform:uppercase; animation:fadeUp 1s ease 0.1s both; }
   .hero h1 { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(3rem,11vw,6rem); line-height:0.88; color:var(--dark); animation:fadeUp 1s ease 0.2s both; }
   .hero h1 em { font-style:italic; color:var(--salmon); display:block; }
@@ -61,13 +40,8 @@
   .hero-sub { font-size:0.7rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--azul); font-weight:300; animation:fadeUp 1s ease 0.5s both; }
   .hero-location { font-size:0.64rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-top:0.3rem; font-weight:300; animation:fadeUp 1s ease 0.55s both; }
 
-  /* COUNTDOWN — below hero */
-  .countdown-section {
-    background:var(--cream);
-    padding:2rem 1.5rem 1.5rem;
-    text-align:center;
-    border-bottom:1px solid var(--areia);
-  }
+  /* COUNTDOWN */
+  .countdown-section { background:var(--cream); padding:2rem 1.5rem 1.5rem; text-align:center; border-bottom:1px solid var(--areia); }
   .countdown { display:flex; justify-content:center; gap:1.5rem; }
   .count-item { text-align:center; }
   .count-num { font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:300; color:var(--salmon); line-height:1; display:block; }
@@ -137,7 +111,6 @@
   .contact-link { font-size:0.72rem; color:var(--salmon); text-decoration:none; display:block; margin-top:0.2rem; }
 
   /* DRESS CODE */
-  .dresscode-header-box { background:linear-gradient(135deg,#fdf6ee,#f0e8d8); border-radius:2px; padding:1.8rem 1.5rem; text-align:center; margin-bottom:1.5rem; border:1px solid var(--areia); }
   .inspo-label { text-align:center; font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--azul); margin:1.2rem 0 0.5rem; display:block; }
   .inspo-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; border-radius:2px; overflow:hidden; }
   .inspo-slot { aspect-ratio:3/4; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.5rem; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:300; border-radius:2px; }
@@ -145,12 +118,12 @@
 
   /* PIX */
   .pix-box { background:white; border-radius:2px; padding:1.5rem; text-align:center; box-shadow:0 2px 12px rgba(45,36,24,0.05); border-top:4px solid var(--salmon); margin-top:1.5rem; }
-  .pix-key { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--dark); background:var(--cream); padding:0.6rem 1rem; border-radius:2px; margin:0.8rem 0; word-break:break-all; letter-spacing:0.05em; }
+  .pix-key { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--dark); background:var(--cream); padding:0.6rem 1rem; border-radius:2px; margin:0.8rem 0; word-break:break-all; }
   .copy-btn { background:var(--salmon); color:white; border:none; padding:0.6rem 1.5rem; font-family:'Jost',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer; border-radius:1px; transition:opacity 0.2s; margin-top:0.5rem; }
   .copy-btn:hover { opacity:0.85; }
   .copy-feedback { font-size:0.72rem; color:var(--azul); margin-top:0.5rem; height:1rem; }
 
-  /* NOSSA HISTÓRIA */
+  /* HISTÓRIA */
   .story-block { margin-bottom:2.5rem; }
   .story-text { font-family:'Cormorant Garamond',serif; font-size:1.05rem; line-height:1.8; color:var(--text); margin-bottom:1rem; font-weight:300; }
   .story-text strong { font-weight:400; color:var(--salmon); }
@@ -166,9 +139,12 @@
   .recado-input:focus { outline:none; border-color:var(--salmon); }
   .recado-btn { background:var(--salmon); color:white; border:none; padding:0.7rem 1.5rem; font-family:'Jost',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer; border-radius:1px; transition:opacity 0.2s; width:100%; }
   .recado-btn:hover { opacity:0.85; }
+  .recado-btn:disabled { opacity:0.5; cursor:not-allowed; }
   .recado-card { background:white; border-radius:2px; padding:1.2rem 1.4rem; margin-bottom:1rem; border-left:3px solid var(--areia); box-shadow:0 2px 12px rgba(45,36,24,0.05); }
   .recado-name { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--salmon); margin-bottom:0.4rem; }
   .recado-msg { font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--text); line-height:1.6; font-weight:300; font-style:italic; }
+  .recado-date { font-size:0.65rem; color:var(--muted); margin-top:0.4rem; }
+  .recado-loading { text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--muted); padding:2rem; }
 
   .subsection-title { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:300; color:var(--dark); margin:2rem 0 1rem; padding-bottom:0.4rem; border-bottom:1px solid var(--areia); }
   .footer-note { text-align:center; padding:2.5rem 1.5rem; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--caramelo); border-top:1px solid var(--areia); line-height:1.8; }
@@ -282,11 +258,8 @@
     </div>
   </div>
   <div style="border-radius:2px; overflow:hidden; margin-bottom:1.5rem; box-shadow:0 2px 12px rgba(45,36,24,0.08);">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d494929.8!2d-36.3!3d-5.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x7b255571572d46b%3A0xaed695f0e2d45f32!2sAeroporto%20Internacional%20de%20Natal!3m2!1d-5.9114!2d-35.2477!4m5!1s0x7b2d0f8b8b8b8b8b%3A0x0!2sKauli%20Seadi%20Water%20Sports%20Club%2C%20S%C3%A3o%20Miguel%20do%20Gostoso%2C%20RN!3m2!1d-5.1178!2d-35.8697!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-      width="100%" height="260" style="border:0; display:block;"
-      allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d494929.8!2d-36.3!3d-5.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x7b255571572d46b%3A0xaed695f0e2d45f32!2sAeroporto%20Internacional%20de%20Natal!3m2!1d-5.9114!2d-35.2477!4m5!1s0x7b2d0f8b8b8b8b8b%3A0x0!2sKauli%20Seadi%20Water%20Sports%20Club%2C%20S%C3%A3o%20Miguel%20do%20Gostoso%2C%20RN!3m2!1d-5.1178!2d-35.8697!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+      width="100%" height="260" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
   <div class="info-card">
@@ -313,46 +286,10 @@
     </div>
   </div>
   <div class="cards-grid">
-    <div class="info-card">
-      <div class="card-accent"></div>
-      <div class="card-body">
-        <span class="card-icon">🌺</span>
-        <p class="card-name">Bangalô Kauli Seadi</p>
-        <p class="card-detail">Fale com a recepção e avise que é convidado de Luana e Diego para condições especiais!</p>
-        <span class="card-tag">⭐ próximo à cerimônia</span>
-        <a class="card-link" href="tel:+5584998076437">→ (84) 99807-6437</a>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="card-accent azul"></div>
-      <div class="card-body">
-        <span class="card-icon">🏡</span>
-        <p class="card-name">Jaya Pousada Boutique</p>
-        <p class="card-detail">Pousada charmosa e bem localizada.</p>
-        <span class="card-tag">boutique</span>
-        <a class="card-link" href="https://instagram.com/jayapousada_" target="_blank">→ @jayapousada_</a>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="card-accent caramelo"></div>
-      <div class="card-body">
-        <span class="card-icon">🌿</span>
-        <p class="card-name">Pousada Mestizo</p>
-        <p class="card-detail">Dentro do Condomínio Monte Alegre. Linda! Fale com Rodrigo para pacotes especiais para convidados do casamento.</p>
-        <span class="card-tag">condomínio monte alegre</span>
-        <a class="card-link" href="tel:+558486081043">→ +55 84 8608-1043 (Rodrigo)</a>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="card-accent amarelo"></div>
-      <div class="card-body">
-        <span class="card-icon">🏘️</span>
-        <p class="card-name">Condomínio Monte Alegre</p>
-        <p class="card-detail">Qualquer hotel, pousada ou Airbnb dentro do condomínio é ótima opção — fica pertinho da cerimônia.</p>
-        <span class="card-tag">várias opções</span>
-        <a class="card-link" href="https://www.airbnb.com.br/s/São-Miguel-do-Gostoso" target="_blank">→ Buscar no Airbnb</a>
-      </div>
-    </div>
+    <div class="info-card"><div class="card-accent"></div><div class="card-body"><span class="card-icon">🌺</span><p class="card-name">Bangalô Kauli Seadi</p><p class="card-detail">Fale com a recepção e avise que é convidado de Luana e Diego para condições especiais!</p><span class="card-tag">⭐ próximo à cerimônia</span><a class="card-link" href="tel:+5584998076437">→ (84) 99807-6437</a></div></div>
+    <div class="info-card"><div class="card-accent azul"></div><div class="card-body"><span class="card-icon">🏡</span><p class="card-name">Jaya Pousada Boutique</p><p class="card-detail">Pousada charmosa e bem localizada.</p><span class="card-tag">boutique</span><a class="card-link" href="https://instagram.com/jayapousada_" target="_blank">→ @jayapousada_</a></div></div>
+    <div class="info-card"><div class="card-accent caramelo"></div><div class="card-body"><span class="card-icon">🌿</span><p class="card-name">Pousada Mestizo</p><p class="card-detail">Dentro do Condomínio Monte Alegre. Fale com Rodrigo para pacotes especiais para convidados.</p><span class="card-tag">condomínio monte alegre</span><a class="card-link" href="tel:+558486081043">→ +55 84 8608-1043 (Rodrigo)</a></div></div>
+    <div class="info-card"><div class="card-accent amarelo"></div><div class="card-body"><span class="card-icon">🏘️</span><p class="card-name">Condomínio Monte Alegre</p><p class="card-detail">Qualquer hotel, pousada ou Airbnb dentro do condomínio — fica pertinho da cerimônia.</p><span class="card-tag">várias opções</span><a class="card-link" href="https://www.airbnb.com.br/s/São-Miguel-do-Gostoso" target="_blank">→ Buscar no Airbnb</a></div></div>
   </div>
 </div>
 
@@ -366,33 +303,15 @@
   <p style="text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--muted);margin-bottom:2rem;line-height:1.6;">São Miguel do Gostoso é um dos lugares mais lindos do Brasil 🌊<br>Aproveite cada momento!</p>
   <p style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--salmon);margin-bottom:1rem;">🍽 Onde comer</p>
   <div class="cards-grid">
-    <div class="info-card">
-      <div class="card-accent"></div>
-      <div class="card-body"><span class="card-icon">🍕</span><p class="card-name">Quintal Pizzaria</p><p class="card-detail">Nosso ponto de encontro na sexta! Pizzas artesanais em ambiente gostoso.</p><span class="card-tag">jantar · sexta</span><a class="card-link" href="https://maps.google.com/?q=Quintal+Pizzaria+São+Miguel+do+Gostoso" target="_blank">→ Ver no Maps</a></div>
-    </div>
-    <div class="info-card">
-      <div class="card-accent azul"></div>
-      <div class="card-body"><span class="card-icon">🦐</span><p class="card-name">Frutos do Mar Locais</p><p class="card-detail">Pergunte na pousada a dica do dia — os moradores sempre sabem o melhor lugar!</p><span class="card-tag">almoço</span></div>
-    </div>
-    <div class="info-card">
-      <div class="card-accent amarelo"></div>
-      <div class="card-body"><span class="card-icon">🌅</span><p class="card-name">Idílico Village Paradise</p><p class="card-detail">Bar incrível para o pôr do sol. Nosso Sunset do sábado acontece aqui!</p><span class="card-tag">drinks · sunset</span></div>
-    </div>
+    <div class="info-card"><div class="card-accent"></div><div class="card-body"><span class="card-icon">🍕</span><p class="card-name">Quintal Pizzaria</p><p class="card-detail">Nosso ponto de encontro na sexta! Pizzas artesanais em ambiente gostoso.</p><span class="card-tag">jantar · sexta</span><a class="card-link" href="https://maps.google.com/?q=Quintal+Pizzaria+São+Miguel+do+Gostoso" target="_blank">→ Ver no Maps</a></div></div>
+    <div class="info-card"><div class="card-accent azul"></div><div class="card-body"><span class="card-icon">🦐</span><p class="card-name">Frutos do Mar Locais</p><p class="card-detail">Pergunte na pousada a dica do dia — os moradores sempre sabem o melhor lugar!</p><span class="card-tag">almoço</span></div></div>
+    <div class="info-card"><div class="card-accent amarelo"></div><div class="card-body"><span class="card-icon">🌅</span><p class="card-name">Idílico Village Paradise</p><p class="card-detail">Bar incrível para o pôr do sol. Nosso Sunset do sábado acontece aqui!</p><span class="card-tag">drinks · sunset</span></div></div>
   </div>
   <p style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--salmon);margin:2rem 0 1rem;">🌿 O que fazer</p>
   <div class="cards-grid">
-    <div class="info-card">
-      <div class="card-accent"></div>
-      <div class="card-body"><span class="card-icon">🪁</span><p class="card-name">Kitesurf</p><p class="card-detail">São Miguel é uma das melhores praias de kitesurf do mundo — é por isso que o Kauli Seadi tem o nome dele no clube!</p><span class="card-tag">esporte · praia</span></div>
-    </div>
-    <div class="info-card">
-      <div class="card-accent azul"></div>
-      <div class="card-body"><span class="card-icon">🌊</span><p class="card-name">Praia do Maceió</p><p class="card-detail">Águas calmas e transparentes. Perfeita para um mergulho no sábado de manhã.</p><span class="card-tag">praia · passeio</span></div>
-    </div>
-    <div class="info-card">
-      <div class="card-accent caramelo"></div>
-      <div class="card-body"><span class="card-icon">🚤</span><p class="card-name">Galinhos</p><p class="card-detail">Vila de pescadores acessível só de barco, ~1h de São Miguel. Um dos lugares mais remotos e lindos do RN.</p><span class="card-tag">passeio · dia inteiro</span></div>
-    </div>
+    <div class="info-card"><div class="card-accent"></div><div class="card-body"><span class="card-icon">🪁</span><p class="card-name">Kitesurf</p><p class="card-detail">São Miguel é uma das melhores praias de kitesurf do mundo!</p><span class="card-tag">esporte · praia</span></div></div>
+    <div class="info-card"><div class="card-accent azul"></div><div class="card-body"><span class="card-icon">🌊</span><p class="card-name">Praia do Maceió</p><p class="card-detail">Águas calmas e transparentes. Perfeita para um mergulho no sábado de manhã.</p><span class="card-tag">praia · passeio</span></div></div>
+    <div class="info-card"><div class="card-accent caramelo"></div><div class="card-body"><span class="card-icon">🚤</span><p class="card-name">Galinhos</p><p class="card-detail">Vila de pescadores acessível só de barco, ~1h de São Miguel. Lindo!</p><span class="card-tag">passeio · dia inteiro</span></div></div>
   </div>
 </div>
 
@@ -408,9 +327,7 @@
     <div class="card-body">
       <span class="card-icon">👗</span>
       <p class="card-name">Dicas para o look das mulheres</p>
-      <p class="card-detail" style="margin-top:0.5rem;">Queremos que todas se sintam lindas e confortáveis nesse dia especial!<br><br>
-      Sugerimos vestidos leves e fluidos, que combinam com o clima e a energia da festa. As cores são livres — tons vivos, alegres ou pastéis ficam perfeitos. Apenas pedimos evitar preto e branco.<br><br>
-      Para maior conforto, apostem em sandálias sem salto fino, assim vocês poderão aproveitar cada momento sem preocupações.</p>
+      <p class="card-detail" style="margin-top:0.5rem;">Queremos que todas se sintam lindas e confortáveis nesse dia especial!<br><br>Sugerimos vestidos leves e fluidos, que combinam com o clima e a energia da festa. As cores são livres — tons vivos, alegres ou pastéis ficam perfeitos. Apenas pedimos evitar preto e branco.<br><br>Para maior conforto, apostem em sandálias sem salto fino, assim vocês poderão aproveitar cada momento sem preocupações.</p>
     </div>
   </div>
   <span class="inspo-label">✦ inspirações · mulheres · liso, sem estampa</span>
@@ -423,9 +340,7 @@
     <div class="card-body">
       <span class="card-icon">👔</span>
       <p class="card-name">Dicas para o look dos homens</p>
-      <p class="card-detail" style="margin-top:0.5rem;">Queremos que todos estejam elegantes e confortáveis para celebrar ao ar livre.<br><br>
-      Apostem em tons claros e tecidos leves, como linho e algodão. Camisas elegantes são super bem-vindas, mas podem deixar o blazer e o terno em casa.<br><br>
-      Pedimos apenas que usem calça (sem bermuda) e deixem o boné para outro dia. Nos pés, tanto tênis quanto sapatos estão liberados — o importante é se sentir bem.</p>
+      <p class="card-detail" style="margin-top:0.5rem;">Queremos que todos estejam elegantes e confortáveis para celebrar ao ar livre.<br><br>Apostem em tons claros e tecidos leves, como linho e algodão. Camisas elegantes são super bem-vindas, mas podem deixar o blazer e o terno em casa.<br><br>Pedimos apenas que usem calça (sem bermuda) e deixem o boné para outro dia. Nos pés, tanto tênis quanto sapatos estão liberados.</p>
     </div>
   </div>
   <span class="inspo-label">✦ inspirações · homens · azul e rosa clarinho</span>
@@ -436,7 +351,7 @@
   <div class="info-card" style="background:linear-gradient(135deg,#fdf6ee,#f0e8d8);">
     <div class="card-body">
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--salmon);font-size:1rem;">☀️ Lembrete</p>
-      <p class="card-detail" style="margin-top:0.4rem;">Ah, e não esqueçam do protetor solar e óculos de sol para curtir cada momento com estilo!</p>
+      <p class="card-detail" style="margin-top:0.4rem;">Não esqueçam do protetor solar e óculos de sol para curtir cada momento com estilo!</p>
     </div>
   </div>
 </div>
@@ -450,21 +365,11 @@
   </div>
   <div class="info-card">
     <div class="card-body">
-      <div class="contact-item">
-        <div><p class="contact-name">Kauli Seadi Beach Hotel</p><p class="contact-detail">Se você vai ficar aqui e já confirmou com a noiva — relaxa, está resolvido! 😊</p></div>
-      </div>
-      <div class="contact-item">
-        <div><p class="contact-name">Studio Samantha Sales</p><p class="contact-detail">Para quem vai ficar no Bangalô Kauli Seadi Eco-Resort</p><a class="contact-link" href="tel:+5584967359959">→ +55 84 9673-5959</a></div>
-      </div>
-      <div class="contact-item">
-        <div><p class="contact-name">Alicia · Studio A</p><p class="contact-detail">Para combinar e ir ao seu hotel</p><a class="contact-link" href="tel:+5584914555704">→ +55 84 9145-5704</a></div>
-      </div>
-      <div class="contact-item">
-        <div><p class="contact-name">Studio Rafaella Yanca</p><p class="contact-detail">Salão em São Miguel do Gostoso</p><a class="contact-link" href="tel:+5584949431315">→ +55 84 9494-1315</a></div>
-      </div>
-      <div class="contact-item">
-        <div><p class="contact-name">Luiz Amaram</p><p class="contact-detail">De Niterói, com pequeno salão em São Miguel do Gostoso</p><a class="contact-link" href="tel:+5521998025664">→ +55 21 99802-5664</a></div>
-      </div>
+      <div class="contact-item"><div><p class="contact-name">Kauli Seadi Beach Hotel</p><p class="contact-detail">Se você vai ficar aqui e já confirmou com a noiva — relaxa, está resolvido! 😊</p></div></div>
+      <div class="contact-item"><div><p class="contact-name">Studio Samantha Sales</p><p class="contact-detail">Para quem vai ficar no Bangalô Kauli Seadi Eco-Resort</p><a class="contact-link" href="tel:+5584967359959">→ +55 84 9673-5959</a></div></div>
+      <div class="contact-item"><div><p class="contact-name">Alicia · Studio A</p><p class="contact-detail">Para combinar e ir ao seu hotel</p><a class="contact-link" href="tel:+5584914555704">→ +55 84 9145-5704</a></div></div>
+      <div class="contact-item"><div><p class="contact-name">Studio Rafaella Yanca</p><p class="contact-detail">Salão em São Miguel do Gostoso</p><a class="contact-link" href="tel:+5584949431315">→ +55 84 9494-1315</a></div></div>
+      <div class="contact-item"><div><p class="contact-name">Luiz Amaram</p><p class="contact-detail">De Niterói, com pequeno salão em São Miguel do Gostoso</p><a class="contact-link" href="tel:+5521998025664">→ +55 21 99802-5664</a></div></div>
     </div>
   </div>
 </div>
@@ -480,9 +385,9 @@
   <div class="recado-form">
     <input class="recado-input" type="text" id="recadoNome" placeholder="Seu nome" style="height:44px;">
     <textarea class="recado-input" id="recadoMsg" rows="4" placeholder="Escreva seu recado para Luana e Diego..."></textarea>
-    <button class="recado-btn" onclick="enviarRecado()">Enviar recado 💌</button>
+    <button class="recado-btn" id="recadoBtn" onclick="enviarRecado()">Enviar recado 💌</button>
   </div>
-  <div id="recadosList"></div>
+  <div id="recadosList"><p class="recado-loading">Carregando recados... 💌</p></div>
 </div>
 
 <!-- PRESENTES -->
@@ -517,23 +422,18 @@
     <h2 class="section-title">Nossa <em>História</em></h2>
     <div class="section-deco"></div>
   </div>
-
   <div class="story-block">
     <span class="story-chapter">✦ o começo</span>
     <p class="story-text">Nos conhecemos por aplicativo — sim, um daqueles! Mas foi o <strong>amor pelo mar</strong> e a <strong>alegria do carnaval</strong> que decidiram que a gente era pra valer.</p>
     <img class="story-img" style="height:380px;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241529/IMG_2007_l0tg1i.jpg" alt="Nossa primeira foto">
   </div>
-
   <div class="story-divider"></div>
-
   <div class="story-block">
     <span class="story-chapter">✦ o barco do diego</span>
     <p class="story-text">O barco do Diego virou nosso segundo lar. Foi ali, no balanço das ondas, que a gente foi descobrindo que queria <strong>navegar juntos pra sempre</strong>.</p>
     <img class="story-img" style="height:320px;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241529/IMG_3786_zigaip.jpg" alt="Barco">
   </div>
-
   <div class="story-divider"></div>
-
   <div class="story-block">
     <span class="story-chapter">✦ o carnaval</span>
     <p class="story-text">Nosso primeiro carnaval juntos — e a gente se jogou de verdade. Cabelo laranja, cabelo roxo, fantasia de Barbie... <strong>não tinha mais volta.</strong> 🎭</p>
@@ -542,9 +442,7 @@
       <img class="story-img" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241530/IMG_0074_y5eel4.jpg" alt="Carnaval Barbie">
     </div>
   </div>
-
   <div class="story-divider"></div>
-
   <div class="story-block">
     <span class="story-chapter">✦ kitesurf mode on</span>
     <p class="story-text">Casal que kitea junto, fica junto. Nossa aventura favorita, no nosso elemento favorito. <strong>No vento e no mar</strong>, sempre juntos. 🪁</p>
@@ -553,9 +451,7 @@
       <img class="story-img" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241529/IMG_0797_rzdp6p.jpg" alt="Kite 2">
     </div>
   </div>
-
   <div class="story-divider"></div>
-
   <div class="story-block">
     <span class="story-chapter">✦ e então veio a tailândia...</span>
     <p class="story-text">Festival das Lanternas, céu iluminado, e um joelho no chão. Ela disse sim sentindo que era um sonho. <strong>Era.</strong> ✨</p>
@@ -563,17 +459,13 @@
     <p class="story-text" style="margin-top:1rem;font-style:italic;color:var(--muted);">...e a Tailândia ficou ainda mais linda depois do sim 🌏</p>
     <img class="story-img" style="height:320px;margin-top:0.8rem;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241530/IMG_0677_q20ftm.jpg" alt="Tailândia">
   </div>
-
   <div class="story-divider"></div>
-
   <div class="story-block">
     <span class="story-chapter">✦ nossa família</span>
     <p class="story-text">Tom já estava, <strong>Nanda chegou</strong>, e o coração ficou completo. Nossa família de quatro patas é o amor da nossa vida. 🐾</p>
     <img class="story-img" style="height:340px;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241531/IMG_3020_rzkdlj.jpg" alt="Tom e Nanda">
   </div>
-
   <div class="story-divider"></div>
-
   <div class="story-block">
     <span class="story-chapter">✦ casados de papel passado</span>
     <p class="story-text">Rodeados das pessoas que mais amamos. Nossos pais, nossos irmãos — <strong>casais que são nosso exemplo todos os dias</strong>. E assim chegamos aqui, prontos para o grande dia. 💍</p>
@@ -596,6 +488,64 @@
 </div>
 
 <button class="fab" id="fab" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- FIREBASE -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDb_qeyvUAx4UFjOiVbfnMrVcLSUK2-6LA",
+    authDomain: "wedding-luana-diego.firebaseapp.com",
+    projectId: "wedding-luana-diego",
+    storageBucket: "wedding-luana-diego.firebasestorage.app",
+    messagingSenderId: "1002507702187",
+    appId: "1:1002507702187:web:5c322a665ecf8091ee0cee"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Escuta recados em tempo real
+  const q = query(collection(db, "recados"), orderBy("timestamp", "desc"));
+  onSnapshot(q, (snapshot) => {
+    const list = document.getElementById('recadosList');
+    if (snapshot.empty) {
+      list.innerHTML = '<p style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;color:var(--muted);font-size:0.95rem;">Seja o primeiro a deixar um recado 💌</p>';
+      return;
+    }
+    list.innerHTML = snapshot.docs.map(doc => {
+      const d = doc.data();
+      const data = d.timestamp ? new Date(d.timestamp.seconds * 1000).toLocaleDateString('pt-BR') : '';
+      return `<div class="recado-card">
+        <p class="recado-name">${d.nome}</p>
+        <p class="recado-msg">"${d.msg}"</p>
+        ${data ? `<p class="recado-date">${data}</p>` : ''}
+      </div>`;
+    }).join('');
+  });
+
+  // Enviar recado
+  window.enviarRecado = async function() {
+    const nome = document.getElementById('recadoNome').value.trim();
+    const msg = document.getElementById('recadoMsg').value.trim();
+    const btn = document.getElementById('recadoBtn');
+    if (!nome || !msg) return alert('Preencha seu nome e recado 💌');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    try {
+      await addDoc(collection(db, "recados"), { nome, msg, timestamp: serverTimestamp() });
+      document.getElementById('recadoNome').value = '';
+      document.getElementById('recadoMsg').value = '';
+      btn.textContent = '✓ Recado enviado! 💌';
+      setTimeout(() => { btn.disabled = false; btn.textContent = 'Enviar recado 💌'; }, 3000);
+    } catch(e) {
+      btn.disabled = false;
+      btn.textContent = 'Enviar recado 💌';
+      alert('Erro ao enviar. Tente novamente!');
+    }
+  };
+</script>
 
 <script>
   function updateCountdown() {
@@ -632,29 +582,6 @@
       fb.textContent='✓ Chave copiada!';
       setTimeout(()=>fb.textContent='',2500);
     });
-  }
-
-  const recados = JSON.parse(localStorage.getItem('recados')||'[]');
-  function renderRecados() {
-    const list = document.getElementById('recadosList');
-    if(recados.length===0){list.innerHTML='<p style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;color:var(--muted);font-size:0.95rem;">Seja o primeiro a deixar um recado 💌</p>';return;}
-    list.innerHTML = recados.map(r=>`
-      <div class="recado-card">
-        <p class="recado-name">${r.nome}</p>
-        <p class="recado-msg">"${r.msg}"</p>
-      </div>`).join('');
-  }
-  renderRecados();
-
-  function enviarRecado() {
-    const nome = document.getElementById('recadoNome').value.trim();
-    const msg  = document.getElementById('recadoMsg').value.trim();
-    if(!nome||!msg) return alert('Preencha seu nome e recado 💌');
-    recados.unshift({nome,msg});
-    localStorage.setItem('recados',JSON.stringify(recados));
-    document.getElementById('recadoNome').value='';
-    document.getElementById('recadoMsg').value='';
-    renderRecados();
   }
 </script>
 </body>
