@@ -42,7 +42,7 @@
     position:absolute; inset:0;
     background:linear-gradient(to bottom,rgba(200,220,230,0.05) 0%,rgba(232,217,181,0.45) 55%,rgba(250,247,242,0.97) 83%,var(--cream) 100%);
   }
-  .hero-content { position:relative; z-index:2; padding:2rem 2rem 3.5rem; width:100%; }
+  .hero-content { position:relative; z-index:2; padding:5rem 2rem 2rem; width:100%; }
   .hero-phrase { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.8rem; letter-spacing:0.1em; color:var(--caramelo); line-height:1.65; margin-bottom:1.4rem; text-transform:uppercase; animation:fadeUp 1s ease 0.1s both; }
   .hero h1 { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(3.2rem,11vw,6.5rem); line-height:0.88; color:var(--dark); animation:fadeUp 1s ease 0.2s both; }
   .hero h1 em { font-style:italic; color:var(--salmon); display:block; }
@@ -186,7 +186,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img class="hero-img" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241529/IMG_0947_ueybuq.jpg" alt="Luana e Diego" onerror="this.style.display='none'">
+  <img class="hero-img" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241529/IMG_2007_l0tg1i.jpg" alt="Luana e Diego" onerror="this.style.display='none'">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-phrase">Do infinito do mar à fantasia do carnaval,<br>encontramos o nosso para sempre</p>
@@ -215,6 +215,7 @@
   <div class="nav-inner">
     <button class="nav-btn active" onclick="showTab('programacao',this)">Programação</button>
     <button class="nav-btn" onclick="showTab('viagem',this)">Como Chegar</button>
+    <button class="nav-btn" onclick="showTab('hospedagem',this)">Hospedagem</button>
     <button class="nav-btn" onclick="showTab('passeios',this)">O que Fazer</button>
     <button class="nav-btn" onclick="showTab('dresscode',this)">Trajes</button>
     <button class="nav-btn" onclick="showTab('beleza',this)">Beleza</button>
@@ -265,15 +266,14 @@
   </div>
 </div>
 
-<!-- COMO CHEGAR & HOSPEDAGEM -->
+<!-- COMO CHEGAR -->
 <div class="section" id="viagem">
   <div class="section-header">
     <span class="section-label">✦ logística</span>
-    <h2 class="section-title">Como Chegar & <em>Hospedagem</em></h2>
+    <h2 class="section-title">Como <em>Chegar</em></h2>
     <div class="section-deco"></div>
   </div>
 
-  <h3 class="subsection-title">✈️ Como Chegar</h3>
   <div class="info-card" style="margin-bottom:1rem;">
     <div class="card-accent azul"></div>
     <div class="card-body">
@@ -283,17 +283,32 @@
     </div>
   </div>
 
-  <!-- Google Maps embed -->
   <div style="border-radius:2px; overflow:hidden; margin-bottom:1.5rem; box-shadow:0 2px 12px rgba(45,36,24,0.08);">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.!2d-35.8697!3d-5.1178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b255b9b9b9b9b9b%3A0x0!2sKauli+Seadi+Water+Sports+Club%2C+S%C3%A3o+Miguel+do+Gostoso%2C+RN!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-      width="100%" height="220" style="border:0; display:block;"
+      src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d494929.8!2d-36.3!3d-5.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x7b255571572d46b%3A0xaed695f0e2d45f32!2sAeroporto+Internacional+de+Natal%2C+RN!3m2!1d-5.9114!2d-35.2477!4m5!1s0x7b2cfc8e7b7b7b7b%3A0x0!2sKauli+Seadi+Water+Sports+Club%2C+S%C3%A3o+Miguel+do+Gostoso%2C+RN!3m2!1d-5.1178!2d-35.8697!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+      width="100%" height="260" style="border:0; display:block;"
       allowfullscreen="" loading="lazy"
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
 
-  <h3 class="subsection-title">🏡 Hospedagem</h3>
+  <div class="info-card">
+    <div class="card-accent amarelo"></div>
+    <div class="card-body">
+      <span class="card-icon">🚗</span>
+      <p class="card-name">Dica de transfer</p>
+      <p class="card-detail">Vale combinar com outros convidados para rachar o traslado! Fale com a organização do casamento para indicações de transfer confiáveis.</p>
+    </div>
+  </div>
+</div>
+
+<!-- HOSPEDAGEM -->
+<div class="section" id="hospedagem">
+  <div class="section-header">
+    <span class="section-label">✦ onde ficar</span>
+    <h2 class="section-title">Hospedagem</h2>
+    <div class="section-deco"></div>
+  </div>
   <div class="info-card" style="margin-bottom:1rem;background:linear-gradient(135deg,#fdf6ee,#f0e8d8);">
     <div class="card-body">
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--salmon);font-size:1.05rem;">Dica dos noivos ✨</p>
