@@ -331,10 +331,10 @@
   <div class="screen" id="conecte"><div class="content">
     <h2 class="screen-title">💬 Conecte-se</h2>
     <div class="seg" style="margin-top:1rem;">
-      <button class="seg-btn active" onclick="segTab('chat',this)">💬 Chat</button>
-      <button class="seg-btn" onclick="segTab('mapa',this)">📍 Mapa</button>
+      <button class="seg-btn active" onclick="segTab('mapa',this)">📍 Mapa</button>
+      <button class="seg-btn" onclick="segTab('chat',this)">💬 Chat</button>
     </div>
-    <div class="panel active" id="panel-chat">
+    <div class="panel" id="panel-chat">
       <p class="screen-sub" style="margin-bottom:1rem;">Converse com os outros convidados!</p>
       <div class="chat-input-row">
         <input class="ci" id="chatNome" placeholder="Nome">
@@ -343,7 +343,7 @@
       </div>
       <div id="chatList"><p style="text-align:center;color:var(--muted);font-weight:600;">Carregando... 💬</p></div>
     </div>
-    <div class="panel" id="panel-mapa">
+    <div class="panel active" id="panel-mapa">
       <p class="screen-sub" style="margin-bottom:1rem;">Compartilhe onde você está e veja os noivos e convidados em tempo real! 🗺️</p>
       <div id="mapStatus" class="map-status"></div>
       <div id="map"></div>
@@ -516,7 +516,7 @@
     document.getElementById('cd-days').textContent=String(d).padStart(2,'0'); document.getElementById('cd-hrs').textContent=String(h).padStart(2,'0'); document.getElementById('cd-min').textContent=String(m).padStart(2,'0'); document.getElementById('cd-sec').textContent=String(s).padStart(2,'0');
   }
   updateCountdown(); setInterval(updateCountdown,1000);
-  function showTab(id,btn){ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); document.getElementById(id).classList.add('active'); if(btn){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active');} window.scrollTo(0,0); }
+  function showTab(id,btn){ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); document.getElementById(id).classList.add('active'); if(btn){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active');} window.scrollTo(0,0); if(id==='conecte' && window.initMapIfNeeded){ setTimeout(()=>{ window.initMapIfNeeded(); if(window._map) window._map.invalidateSize(); },150); } }
   function openGuia(name){ showTab('guia-'+name); }
   function segTab(name,btn){ document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active')); document.getElementById('panel-'+name).classList.add('active'); document.querySelectorAll('.seg-btn').forEach(t=>t.classList.remove('active')); btn.classList.add('active'); if(name==='mapa' && window.initMapIfNeeded){ setTimeout(()=>{ window.initMapIfNeeded(); if(window._map) window._map.invalidateSize(); },100); } }
   function copyPix(){ navigator.clipboard.writeText('48999489397').then(()=>{ const fb=document.getElementById('pixFeedback'); fb.textContent='✓ Chave copiada!'; setTimeout(()=>fb.textContent='',2500); }); }
