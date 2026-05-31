@@ -52,13 +52,17 @@
   .screen-sub { font-size:0.85rem; color:var(--muted); font-weight:500; margin-bottom:0.5rem; line-height:1.5; }
 
   /* HERO CARD (agenda) */
-  .hero-card { border-radius:var(--radius); overflow:hidden; position:relative; box-shadow:0 6px 24px rgba(45,36,24,0.12); margin-bottom:1.3rem; }
-  .hero-card img { width:100%; height:230px; object-fit:cover; object-position:center 35%; display:block; }
-  .hero-card-grad { position:absolute; inset:0; background:linear-gradient(to top,rgba(45,36,24,0.55) 0%,rgba(45,36,24,0.1) 45%,transparent 70%); }
+  .hero-card { border-radius:var(--radius); overflow:hidden; position:relative; box-shadow:0 6px 24px rgba(45,36,24,0.12); margin-bottom:1rem; }
+  .hero-card img { width:100%; height:auto; max-height:320px; object-fit:cover; object-position:center 40%; display:block; }
+  .hero-card-grad { position:absolute; inset:0; background:linear-gradient(to top,rgba(45,36,24,0.6) 0%,rgba(45,36,24,0.15) 35%,transparent 60%); }
   .hero-card-text { position:absolute; bottom:0; left:0; right:0; padding:1.2rem; z-index:2; }
-  .hero-card-text .phrase { font-family:'Cormorant Garamond',serif; font-style:italic; color:rgba(255,255,255,0.92); font-size:0.82rem; line-height:1.4; margin-bottom:0.4rem; }
-  .hero-card-text h1 { color:#fff; font-size:1.9rem; font-weight:800; line-height:1; }
-  .hero-card-text .loc { color:rgba(255,255,255,0.8); font-size:0.72rem; font-weight:600; margin-top:0.3rem; }
+  .hero-card-text h1 { color:#fff; font-size:2rem; font-weight:800; line-height:1; text-shadow:0 2px 12px rgba(0,0,0,0.3); }
+  .hero-card-text .loc { color:#fff; font-size:0.75rem; font-weight:600; margin-top:0.3rem; text-shadow:0 1px 8px rgba(0,0,0,0.3); }
+
+  /* PHRASE BANNER */
+  .phrase-banner { position:relative; background:var(--white); border-radius:16px; padding:1.1rem 1.3rem 1.1rem 2.4rem; box-shadow:0 3px 16px rgba(45,36,24,0.06); margin-bottom:1.3rem; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.02rem; line-height:1.5; color:var(--caramelo); border-left:3px solid var(--salmon); }
+  .phrase-quote { position:absolute; left:0.7rem; top:0.3rem; font-family:'Cormorant Garamond',serif; font-size:2.5rem; color:var(--salmon); opacity:0.4; line-height:1; }
+
 
   /* COUNTDOWN CARD */
   .countdown-card { background:var(--white); border-radius:var(--radius); padding:1.2rem; box-shadow:0 3px 16px rgba(45,36,24,0.06); display:flex; justify-content:space-around; margin-bottom:0.5rem; }
@@ -189,10 +193,14 @@
         <img src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777243350/IMG_0947_ueybuq.jpg" alt="Cerimônia" onerror="this.parentElement.style.background='linear-gradient(135deg,#c8dce6,#E8D9B5)';this.style.height='150px';this.style.opacity=0">
         <div class="hero-card-grad"></div>
         <div class="hero-card-text">
-          <p class="phrase">Do infinito do mar à fantasia do carnaval, encontramos o nosso para sempre</p>
           <h1>Luana & Diego</h1>
           <p class="loc">📍 São Miguel do Gostoso · RN</p>
         </div>
+      </div>
+
+      <div class="phrase-banner">
+        <span class="phrase-quote">“</span>
+        Do infinito do mar à fantasia do carnaval, encontramos o nosso para sempre
       </div>
 
       <div class="countdown-card" id="countdown">
@@ -231,6 +239,7 @@
         <button class="guia-card" onclick="openGuia('fazer')"><div class="icon-sq" style="background:var(--amarelo-soft)">🌿</div><div class="name">O que Fazer</div><div class="sub">passeios</div></button>
         <button class="guia-card wide" onclick="openGuia('beleza')"><div class="icon-sq" style="background:var(--caramelo-soft)">💄</div><div><div class="name">Beleza & Maquiagem</div><div class="sub">profissionais da região</div></div></button>
       </div>
+      <div class="children-card"><span style="font-size:1.3rem;">🤍</span><p>Amamos crianças, mas nossa celebração não terá estrutura para recebê-las. Queremos que os papais aproveitem com tranquilidade, então o convite é especialmente para vocês. Esperamos que, com antecedência, todos consigam se organizar.</p></div>
     </div>
   </div>
 
@@ -289,9 +298,7 @@
       <p class="info-detail" style="margin:0.6rem 0;">Sabemos que muitos estão fazendo um esforço para estar conosco, e isso já é o <strong>maior presente</strong> que poderíamos receber.</p>
       <p style="font-size:0.78rem;color:var(--muted);font-weight:700;">— Luana e Diego</p>
     </div>
-    <a class="big-btn" href="https://casamentoluanaediego.com.br/#/presentes" target="_blank">🎁 Lista de Presentes</a>
-    <a class="big-btn azul" href="https://casamentoluanaediego.com.br/#/rsvp" target="_blank">✅ Confirmar Presença</a>
-    <div class="pix-card" style="margin-top:0.5rem;">
+    <div class="pix-card" style="margin-bottom:0.8rem;">
       <div style="font-size:1.6rem;">🌙</div>
       <p style="font-size:1.05rem;font-weight:700;color:var(--dark);margin-top:0.3rem;">Contribua para a lua de mel</p>
       <p style="font-size:0.78rem;color:var(--muted);font-weight:500;margin-top:0.2rem;">Para tornar a lua de mel ainda mais inesquecível 🌊</p>
@@ -300,6 +307,8 @@
       <button class="copy-btn" style="margin-top:0.6rem;" onclick="copyPix()">Copiar chave Pix</button>
       <p class="copy-feedback" id="pixFeedback"></p>
     </div>
+    <a class="big-btn" href="https://casamentoluanaediego.com.br/#/presentes" target="_blank">🎁 Lista de Presentes (Site)</a>
+    <a class="big-btn azul" href="https://casamentoluanaediego.com.br/#/rsvp" target="_blank">✅ Confirmar Presença</a>
   </div></div>
 
   <!-- ===== CONECTE ===== -->
@@ -340,7 +349,6 @@
     <div class="story-block"><span class="story-chapter">e então veio a tailândia...</span><p class="story-text">Festival das Lanternas, céu iluminado, e um joelho no chão. Ela disse sim sentindo que era um sonho. <strong>Era.</strong> ✨</p><img class="story-img" style="height:360px;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241532/IMG_8567_ki6zmr.jpg"><img class="story-img" style="height:280px;margin-top:0.6rem;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241530/IMG_0677_q20ftm.jpg"></div>
     <div class="story-block"><span class="story-chapter">nossa família</span><p class="story-text">Tom já estava, <strong>Nanda chegou</strong>, e o coração ficou completo. 🐾</p><img class="story-img" style="height:300px;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241531/IMG_3020_rzkdlj.jpg"></div>
     <div class="story-block"><span class="story-chapter">casados de papel passado</span><p class="story-text">Rodeados das pessoas que mais amamos. Nossos pais, nossos irmãos — <strong>casais que são nosso exemplo</strong>. E assim chegamos aqui. 💍</p><img class="story-img" style="height:300px;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241531/IMG_9999_b9o9cq.jpg"><img class="story-img" style="height:240px;margin-top:0.6rem;" src="https://res.cloudinary.com/dye8rq3yd/image/upload/v1777241532/IMG_0077_gdxpyn.jpg"></div>
-    <div class="children-card"><span style="font-size:1.3rem;">🤍</span><p>Amamos crianças, mas nossa celebração não terá estrutura para recebê-las. Queremos que os papais aproveitem com tranquilidade, então o convite é especialmente para vocês. Esperamos que, com antecedência, todos consigam se organizar.</p></div>
   </div></div>
 
 </div>
