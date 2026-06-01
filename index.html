@@ -140,6 +140,15 @@
   .chat-name { font-size:0.7rem; font-weight:700; color:var(--salmon); margin-bottom:0.15rem; }
   .chat-text { font-size:0.88rem; color:var(--text); line-height:1.45; font-weight:500; }
   .chat-date { font-size:0.62rem; color:var(--muted); margin-top:0.2rem; font-weight:500; }
+  .chat-foto { width:100%; border-radius:12px; margin-top:0.6rem; display:block; }
+  .recado-form { background:var(--white); border-radius:16px; padding:1rem; margin-bottom:1.2rem; box-shadow:0 3px 14px rgba(45,36,24,0.05); }
+  .recado-actions { display:flex; gap:0.6rem; align-items:center; }
+  .foto-btn { flex-shrink:0; background:var(--azul-soft); color:var(--azul); font-size:0.78rem; font-weight:700; padding:0.7rem 0.9rem; border-radius:12px; cursor:pointer; }
+  .recado-send-btn { flex:1; background:var(--salmon); color:#fff; border:none; padding:0.7rem; font-family:inherit; font-size:0.82rem; font-weight:700; border-radius:12px; cursor:pointer; }
+  .recado-send-btn:disabled { opacity:0.5; }
+  .foto-preview { position:relative; margin-bottom:0.6rem; }
+  .foto-preview img { width:100%; border-radius:12px; display:block; }
+  .foto-preview .rm { position:absolute; top:0.4rem; right:0.4rem; background:rgba(0,0,0,0.6); color:#fff; border:none; border-radius:50%; width:28px; height:28px; cursor:pointer; font-size:0.9rem; }
   .chat-input-row { display:flex; gap:0.5rem; margin-bottom:1.1rem; }
   .ci { border:none; border-radius:12px; padding:0.8rem 1rem; font-family:inherit; font-size:0.85rem; font-weight:500; background:var(--white); box-shadow:0 2px 10px rgba(45,36,24,0.04); }
   .ci:focus { outline:2px solid var(--salmon); }
@@ -235,7 +244,7 @@
       </div>
 
       <div class="sec-label"><span class="dot" style="background:var(--azul-soft)">🎵</span> Música de Entrada</div>
-      <p class="screen-sub" style="margin-bottom:1rem;">Ajude a escolher a música que vamos entrar na cerimônia!</p>
+      <p class="screen-sub" style="margin-bottom:1rem;">Ajude a escolher a música que vamos entrar na festa!</p>
       <div id="voteList"><p style="text-align:center;color:var(--muted);font-weight:600;">Carregando... 🎵</p></div>
     </div>
   </div>
@@ -326,28 +335,35 @@
 
   <!-- ===== CONECTE ===== -->
   <div class="screen" id="conecte"><div class="content">
-    <h2 class="screen-title">💬 Conecte-se</h2>
+    <h2 class="screen-title">💌 Conecte-se</h2>
     <div class="seg" style="margin-top:1rem;">
       <button class="seg-btn active" onclick="segTab('mapa',this)">📍 Mapa</button>
-      <button class="seg-btn" onclick="segTab('chat',this)">💬 Chat</button>
+      <button class="seg-btn" onclick="segTab('chat',this)">💌 Recados</button>
     </div>
     <div class="panel" id="panel-chat">
-      <p class="screen-sub" style="margin-bottom:1rem;">Converse com os outros convidados!</p>
-      <div class="chat-input-row">
-        <input class="ci" id="chatNome" placeholder="Nome">
-        <input class="ci" id="chatMsg" placeholder="Mensagem...">
-        <button class="chat-send" onclick="enviarChat()">➤</button>
+      <p class="screen-sub" style="margin-bottom:1rem;">Deixe um recado para os noivos! Você pode anexar uma foto sua com a gente. 💌</p>
+      <div class="recado-form">
+        <input class="ci" id="chatNome" placeholder="Seu nome" style="width:100%;margin-bottom:0.6rem;">
+        <textarea class="ci" id="chatMsg" placeholder="Escreva seu recado para Luana e Diego..." rows="3" style="width:100%;margin-bottom:0.6rem;resize:none;"></textarea>
+        <div id="fotoPreview" class="foto-preview" style="display:none;"></div>
+        <div class="recado-actions">
+          <label class="foto-btn">
+            📷 Anexar foto
+            <input type="file" id="chatFoto" accept="image/*" style="display:none;" onchange="previewFoto()">
+          </label>
+          <button class="recado-send-btn" id="recadoBtn" onclick="enviarRecado()">Enviar recado 💌</button>
+        </div>
       </div>
-      <div id="chatList"><p style="text-align:center;color:var(--muted);font-weight:600;">Carregando... 💬</p></div>
+      <div id="chatList"><p style="text-align:center;color:var(--muted);font-weight:600;">Carregando recados... 💌</p></div>
     </div>
     <div class="panel active" id="panel-mapa">
       <p class="screen-sub" style="margin-bottom:1rem;">Compartilhe onde você está e veja os noivos e convidados em tempo real! 🗺️</p>
-      <div id="mapStatus" class="map-status"></div>
-      <div id="map"></div>
       <div class="map-controls">
         <button class="big-btn" id="shareLocBtn" onclick="toggleShare()" style="margin-bottom:0.6rem;">📍 Compartilhar minha localização</button>
-        <p style="font-size:0.7rem;color:var(--muted);font-weight:500;text-align:center;line-height:1.5;">Sua localização só aparece enquanto o app estiver aberto. Feche para parar de compartilhar a qualquer momento. 🤍</p>
+        <p style="font-size:0.7rem;color:var(--muted);font-weight:500;text-align:center;line-height:1.5;margin-bottom:0.8rem;">Sua localização só aparece enquanto o app estiver aberto. Feche para parar de compartilhar a qualquer momento. 🤍</p>
       </div>
+      <div id="mapStatus" class="map-status"></div>
+      <div id="map"></div>
       <div id="peopleList" class="people-list"></div>
     </div>
   </div></div>
@@ -387,14 +403,54 @@
   const chatQ = query(collection(db,"chat"), orderBy("timestamp","desc"));
   onSnapshot(chatQ, snap => {
     const list = document.getElementById('chatList');
-    if(snap.empty){ list.innerHTML='<p style="text-align:center;color:var(--muted);font-weight:600;">Comece a conversa! 💬</p>'; return; }
-    list.innerHTML = snap.docs.map(d=>{ const m=d.data(); const data=m.timestamp?new Date(m.timestamp.seconds*1000).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):''; return `<div class="chat-msg"><p class="chat-name">${m.nome}</p><p class="chat-text">${m.msg}</p><p class="chat-date">${data}</p></div>`; }).join('');
+    if(snap.empty){ list.innerHTML='<p style="text-align:center;color:var(--muted);font-weight:600;">Seja o primeiro a deixar um recado! 💌</p>'; return; }
+    list.innerHTML = snap.docs.map(d=>{ const m=d.data(); const data=m.timestamp?new Date(m.timestamp.seconds*1000).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):''; return `<div class="chat-msg"><p class="chat-name">${m.nome}</p><p class="chat-text">${m.msg}</p>${m.foto?`<img class="chat-foto" src="${m.foto}" loading="lazy">`:''}<p class="chat-date">${data}</p></div>`; }).join('');
   });
-  window.enviarChat = async function(){
-    const nome=document.getElementById('chatNome').value.trim(); const msg=document.getElementById('chatMsg').value.trim();
-    if(!nome||!msg) return alert('Preencha nome e mensagem 💬');
-    document.getElementById('chatMsg').value='';
-    try{ await addDoc(collection(db,"chat"),{nome,msg,timestamp:serverTimestamp()}); }catch(e){ alert('Erro ao enviar.'); }
+
+  let fotoSelecionada = null;
+  window.previewFoto = function(){
+    const input = document.getElementById('chatFoto');
+    const file = input.files[0];
+    if(!file) return;
+    fotoSelecionada = file;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const prev = document.getElementById('fotoPreview');
+      prev.style.display='block';
+      prev.innerHTML = `<img src="${e.target.result}"><button class="rm" onclick="removerFoto()">✕</button>`;
+    };
+    reader.readAsDataURL(file);
+  };
+  window.removerFoto = function(){
+    fotoSelecionada = null;
+    document.getElementById('chatFoto').value='';
+    const prev = document.getElementById('fotoPreview');
+    prev.style.display='none'; prev.innerHTML='';
+  };
+  async function uploadFoto(file){
+    const fd = new FormData();
+    fd.append('file', file);
+    fd.append('upload_preset', 'recados_wedding');
+    const res = await fetch('https://api.cloudinary.com/v1_1/dye8rq3yd/image/upload', { method:'POST', body:fd });
+    const data = await res.json();
+    return data.secure_url;
+  }
+  window.enviarRecado = async function(){
+    const nome=document.getElementById('chatNome').value.trim();
+    const msg=document.getElementById('chatMsg').value.trim();
+    const btn=document.getElementById('recadoBtn');
+    if(!nome||!msg) return alert('Preencha seu nome e recado 💌');
+    btn.disabled=true; btn.textContent='Enviando...';
+    try{
+      let fotoUrl = null;
+      if(fotoSelecionada){ btn.textContent='Enviando foto...'; fotoUrl = await uploadFoto(fotoSelecionada); }
+      await addDoc(collection(db,"chat"),{nome,msg,foto:fotoUrl,timestamp:serverTimestamp()});
+      document.getElementById('chatNome').value='';
+      document.getElementById('chatMsg').value='';
+      removerFoto();
+      btn.textContent='✓ Recado enviado! 💌';
+      setTimeout(()=>{ btn.disabled=false; btn.textContent='Enviar recado 💌'; },2500);
+    }catch(e){ btn.disabled=false; btn.textContent='Enviar recado 💌'; alert('Erro ao enviar. Tente novamente!'); }
   };
 
   const musicas = [
@@ -403,7 +459,17 @@
     {id:'m3', nome:'Don\'t Stop Me Now', artista:'Queen', track:'3INsYP1Y8GG4qJvBsKCdXC'},
     {id:'m4', nome:'I Want You Back (Remix)', artista:'Jackson 5', track:'3YvMNitBSsDN2L7kVzLNNa'}
   ];
-  let jaVotou = localStorage.getItem('jaVotou');
+  // voto firme: cookie + localStorage combinados
+  function getVoto(){
+    let v = localStorage.getItem('jaVotou');
+    if(!v){ const m = document.cookie.match(/jaVotou=([^;]+)/); if(m) v = m[1]; }
+    return v;
+  }
+  function setVoto(id){
+    localStorage.setItem('jaVotou', id);
+    document.cookie = 'jaVotou='+id+'; max-age=31536000; path=/';
+  }
+  let jaVotou = getVoto();
   function renderVotes(){
     const list = document.getElementById('voteList');
     if(jaVotou){
@@ -422,8 +488,8 @@
       </div>`).join('') + '<p class="vote-hint">Ouça as opções e vote na sua favorita! Cada pessoa vota uma vez. 🎶</p>';
   }
   window.votar = async function(id){
-    if(localStorage.getItem('jaVotou')) return;
-    localStorage.setItem('jaVotou', id); jaVotou = id;
+    if(getVoto()) return;
+    setVoto(id); jaVotou = id;
     try{ const ref=doc(db,"votos",id); await runTransaction(db, async t=>{ const s=await t.get(ref); const c=s.exists()?(s.data().count||0):0; t.set(ref,{count:c+1}); }); }catch(e){}
     renderVotes();
   };
