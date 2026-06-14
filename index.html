@@ -430,7 +430,8 @@
 </div>
 <style>@keyframes hintBounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-8px)} }</style>
 
-
+<!-- FIREBASE -->
+<script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
   import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp, doc, runTransaction, setDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
   const firebaseConfig = { apiKey:"AIzaSyDb_qeyvUAx4UFjOiVbfnMrVcLSUK2-6LA", authDomain:"wedding-luana-diego.firebaseapp.com", projectId:"wedding-luana-diego", storageBucket:"wedding-luana-diego.firebasestorage.app", messagingSenderId:"1002507702187", appId:"1:1002507702187:web:5c322a665ecf8091ee0cee" };
