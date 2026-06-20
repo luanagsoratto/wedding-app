@@ -471,6 +471,10 @@
     fd.append('upload_preset', 'recados_wedding');
     const res = await fetch('https://api.cloudinary.com/v1_1/dye8rq3yd/image/upload', { method:'POST', body:fd });
     const data = await res.json();
+    if(!res.ok || !data.secure_url){
+      const motivo = data.error && data.error.message ? data.error.message : 'erro desconhecido';
+      throw new Error('Cloudinary: ' + motivo);
+    }
     return data.secure_url;
   }
   window.enviarRecado = async function(){
@@ -488,7 +492,7 @@
       removerFoto();
       btn.textContent='✓ Recado enviado! 💌';
       setTimeout(()=>{ btn.disabled=false; btn.textContent='Enviar recado 💌'; },2500);
-    }catch(e){ btn.disabled=false; btn.textContent='Enviar recado 💌'; alert('Erro ao enviar. Tente novamente!'); }
+    }catch(e){ btn.disabled=false; btn.textContent='Enviar recado 💌'; alert('Erro ao enviar: ' + (e.message || e)); }
   };
 
   const musicas = [
