@@ -79,6 +79,27 @@
   .timeline-dot { width:14px; height:14px; border-radius:50%; background:var(--salmon); margin-top:6px; }
   .timeline-line { width:2px; flex:1; background:#eee5d6; margin-top:4px; }
   .timeline-item:last-child .timeline-line { display:none; }
+
+  /* Programação agrupada por dia */
+  .day-block { margin-bottom:2.5rem; }
+  .day-block:last-child { margin-bottom:0.5rem; }
+  .day-header { display:flex; align-items:baseline; gap:0.6rem; flex-wrap:wrap; padding-bottom:0.7rem; margin-bottom:1.1rem; border-bottom:2px solid var(--areia); }
+  .day-header .day-weekday { font-size:1.5rem; font-weight:800; color:var(--dark); letter-spacing:-0.01em; }
+  .day-header .day-date { font-size:1rem; font-weight:700; color:var(--salmon); }
+  .day-header.big-day { border-bottom-color:var(--amarelo); }
+  .day-header .day-badge { display:inline-block; font-size:0.66rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--caramelo); background:var(--amarelo-soft); padding:0.2rem 0.6rem; border-radius:20px; }
+
+  .prog-card { background:var(--white); border-radius:18px; padding:1.2rem 1.3rem; box-shadow:0 3px 14px rgba(45,36,24,0.06); margin-bottom:0.9rem; }
+  .prog-card:last-child { margin-bottom:0; }
+  .prog-card.highlight { border:2px solid var(--amarelo); }
+  .prog-card.madrinhas { background:var(--salmon-soft); }
+  .prog-time { display:inline-block; font-size:1.15rem; font-weight:800; color:var(--salmon); margin-bottom:0.3rem; }
+  .prog-name { font-size:1.2rem; font-weight:800; color:var(--dark); line-height:1.2; margin-bottom:0.5rem; }
+  .prog-local { display:flex; align-items:flex-start; gap:0.4rem; font-size:0.95rem; font-weight:700; color:var(--dark); margin-bottom:0.6rem; }
+  .prog-local .pin { flex-shrink:0; }
+  .prog-desc { font-size:0.85rem; color:var(--muted); line-height:1.55; font-weight:500; }
+  .prog-desc strong { color:var(--caramelo); font-weight:800; }
+  .prog-link { display:inline-block; font-size:0.85rem; color:var(--white); background:var(--azul); font-weight:700; text-decoration:none; margin-top:0.8rem; padding:0.5rem 1rem; border-radius:20px; }
   .event-card { flex:1; background:var(--white); border-radius:16px; padding:1rem 1.1rem; box-shadow:0 3px 14px rgba(45,36,24,0.05); margin-bottom:0.2rem; }
   .event-day { font-size:0.65rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--azul); margin-bottom:0.3rem; }
   .event-time { font-size:0.72rem; font-weight:700; color:var(--salmon); }
@@ -238,16 +259,83 @@
       </div>
 
       <div class="sec-label"><span class="dot" style="background:var(--salmon-soft)">📅</span> Programação</div>
-      <div class="timeline">
-        <div class="timeline-item"><div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div><div class="event-card"><div class="event-day">Sexta · 04 set</div><span class="event-time">19h00</span><div class="event-name">Jantar de Boas-Vindas</div><div class="event-desc">Quintal Pizzaria · Rua da Xepa. O primeiro encontro de todos!</div><a class="event-link" href="https://maps.google.com/?q=Quintal+Pizzaria+São+Miguel+do+Gostoso" target="_blank">Ver no Maps →</a></div></div>
-        <div class="timeline-item"><div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div><div class="event-card"><div class="event-day">Sábado · 05 set</div><span class="event-time">15h30</span><div class="event-name">Sunset Party</div><div class="event-desc">Idílico Village Paradise. Drinks e o pôr do sol mais bonito do RN.</div><a class="event-link" href="https://maps.google.com/?q=Idílico+Village+Paradise+São+Miguel+do+Gostoso" target="_blank">Ver no Maps →</a></div></div>
-        <div class="timeline-item"><div class="timeline-marker"><div class="timeline-dot" style="background:var(--amarelo)"></div><div class="timeline-line"></div></div><div class="event-card" style="border:2px solid var(--amarelo)"><div class="event-day" style="color:var(--caramelo)">Domingo · 06 set · O grande dia 🌸</div><span class="event-time">15h30</span><div class="event-name">Cerimônia</div><div class="event-desc">Kauli Seadi Water Sports Club. Chegue com antecedência!</div><a class="event-link" href="https://maps.google.com/?q=Kauli+Seadi+Water+Sports+Club+São+Miguel+do+Gostoso" target="_blank">Ver no Maps →</a></div></div>
-        <div class="timeline-item"><div class="timeline-marker"><div class="timeline-dot" style="background:var(--amarelo)"></div></div><div class="event-card"><span class="event-time">Após a cerimônia</span><div class="event-name">Recepção & Festa</div><div class="event-desc">No mesmo local — jantar, bolo, dança e celebração!</div></div></div>
+      <div class="prog">
+
+        <!-- SEXTA -->
+        <div class="day-block">
+          <div class="day-header"><span class="day-weekday">Sexta-feira</span><span class="day-date">04 de setembro</span></div>
+          <div class="prog-card">
+            <span class="prog-time">🚤 13h30</span>
+            <div class="prog-name">Passeio de barco nos Parrachos</div>
+            <div class="prog-local"><span class="pin">📍</span><span>Restaurante do Anselmo · Praia de Perobas, Touros</span></div>
+            <div class="prog-desc">De lá saem as lanchas para as piscinas naturais dos Parrachos — um dia lindo de mar! Fica a <strong>~40 min de São Miguel</strong>, então se organizem para sair com tempo.</div>
+            <a class="prog-link" href="https://maps.google.com/?q=Restaurante+do+Anselmo+Perobas+Touros+RN" target="_blank">Ver no Maps →</a>
+          </div>
+          <div class="prog-card">
+            <span class="prog-time">🍕 19h00</span>
+            <div class="prog-name">Jantar de Boas-Vindas</div>
+            <div class="prog-local"><span class="pin">📍</span><span>Quintal Pizzaria · Rua da Xepa</span></div>
+            <div class="prog-desc">O primeiro encontro de todos! <strong>Atenção:</strong> conseguimos segurar as mesas reservadas só até <strong>19h40</strong> — por favor, não se atrasem. 😉</div>
+            <a class="prog-link" href="https://maps.google.com/?q=Quintal+Pizzaria+São+Miguel+do+Gostoso" target="_blank">Ver no Maps →</a>
+          </div>
+        </div>
+
+        <!-- SÁBADO -->
+        <div class="day-block">
+          <div class="day-header"><span class="day-weekday">Sábado</span><span class="day-date">05 de setembro</span></div>
+          <div class="prog-card">
+            <span class="prog-time">🏖️ 13h00</span>
+            <div class="prog-name">Dia de praia no Nauan</div>
+            <div class="prog-local"><span class="pin">📍</span><span>Nauan Beach Club · Praia do Reduto</span></div>
+            <div class="prog-desc">Mudança de planos — o sunset saiu de cena e entrou algo ainda melhor! Esperamos vocês para um dia de praia maravilhoso: piscina, mar, beach tênis e muita comida boa. Vem curtir com a gente!</div>
+            <a class="prog-link" href="https://maps.google.com/?q=Nauan+Beach+Club+São+Miguel+do+Gostoso" target="_blank">Ver no Maps →</a>
+          </div>
+        </div>
+
+        <!-- DOMINGO -->
+        <div class="day-block">
+          <div class="day-header big-day"><span class="day-weekday">Domingo</span><span class="day-date">06 de setembro</span><span class="day-badge">🌸 O grande dia</span></div>
+          <div class="prog-card highlight">
+            <span class="prog-time">💍 15h30</span>
+            <div class="prog-name">Cerimônia</div>
+            <div class="prog-local"><span class="pin">📍</span><span>Kauli Seadi Water Sports Club</span></div>
+            <div class="prog-desc">Com o mar de São Miguel ao fundo, diremos o nosso sim. Chegue com antecedência para garantir um bom lugar!</div>
+            <a class="prog-link" href="https://maps.google.com/?q=Kauli+Seadi+Water+Sports+Club+São+Miguel+do+Gostoso" target="_blank">Ver no Maps →</a>
+          </div>
+          <div class="prog-card">
+            <span class="prog-time">🎉 Após a cerimônia</span>
+            <div class="prog-name">Recepção & Festa</div>
+            <div class="prog-local"><span class="pin">📍</span><span>No mesmo local da cerimônia</span></div>
+            <div class="prog-desc">Jantar, bolo, dança e muita celebração! 💃🕺</div>
+          </div>
+          <div class="prog-card madrinhas">
+            <span class="prog-time">💐 15h00</span>
+            <div class="prog-name">Recado para as madrinhas</div>
+            <div class="prog-local"><span class="pin">📍</span><span>Bangalô da noiva</span></div>
+            <div class="prog-desc">Meninas, estejam aqui às <strong>15h</strong> para nos arrumarmos e curtirmos juntas esse momento antes da cerimônia! 🤍</div>
+          </div>
+        </div>
+
+        <!-- TERÇA -->
+        <div class="day-block">
+          <div class="day-header"><span class="day-weekday">Terça-feira</span><span class="day-date">08 de setembro</span></div>
+          <div class="prog-card">
+            <span class="prog-time">🚤 07h00</span>
+            <div class="prog-name">Passeio de barco nos Parrachos · 2ª rodada</div>
+            <div class="prog-local"><span class="pin">📍</span><span>Restaurante do Anselmo · Praia de Perobas, Touros</span></div>
+            <div class="prog-desc">Para quem ficou com gostinho de quero mais (ou não pôde ir na sexta)! Segunda rodada do passeio de barco às piscinas naturais. Saída bem cedinho — lembrem que fica a <strong>~40 min de São Miguel</strong>.</div>
+            <a class="prog-link" href="https://maps.google.com/?q=Restaurante+do+Anselmo+Perobas+Touros+RN" target="_blank">Ver no Maps →</a>
+          </div>
+        </div>
+
       </div>
 
       <div class="sec-label"><span class="dot" style="background:var(--azul-soft)">🎵</span> Música de Entrada</div>
-      <p class="screen-sub" style="margin-bottom:1rem;">Ajude a escolher a música que vamos entrar na festa!</p>
-      <div id="voteList"><p style="text-align:center;color:var(--muted);font-weight:600;">Carregando... 🎵</p></div>
+      <div class="vote-thanks" style="margin-top:0.5rem;">
+        <div style="font-size:2.4rem;">🎵💛</div>
+        <p style="font-size:1.15rem;font-weight:800;color:var(--dark);margin:0.6rem 0 0.4rem;">Votação encerrada!</p>
+        <p style="font-size:0.9rem;color:var(--muted);font-weight:500;line-height:1.6;">Obrigado a todos que votaram! A música da nossa entrada já foi escolhida 🎉<br><br>Agora é só aguardar o <strong>grande dia</strong> para descobrir qual foi. 🤍</p>
+      </div>
     </div>
   </div>
 
@@ -494,48 +582,6 @@
       setTimeout(()=>{ btn.disabled=false; btn.textContent='Enviar recado 💌'; },2500);
     }catch(e){ btn.disabled=false; btn.textContent='Enviar recado 💌'; alert('Erro ao enviar: ' + (e.message || e)); }
   };
-
-  const musicas = [
-    {id:'m1', nome:'Stumblin\' In', artista:'Lone Tusker', track:'4QECgFL34Co7AdI0YBz3VQ'},
-    {id:'m2', nome:'Murder On The Dancefloor', artista:'Sophie Ellis-Bextor', track:'4tKGFmENO69tZR9ahgZu48'},
-    {id:'m3', nome:'Don\'t Stop Me Now', artista:'Queen', track:'3INsYP1Y8GG4qJvBsKCdXC'},
-    {id:'m4', nome:'I Want You Back (Remix)', artista:'Jackson 5', track:'3YvMNitBSsDN2L7kVzLNNa'}
-  ];
-  // voto firme: cookie + localStorage combinados
-  function getVoto(){
-    let v = localStorage.getItem('jaVotou');
-    if(!v){ const m = document.cookie.match(/jaVotou=([^;]+)/); if(m) v = m[1]; }
-    return v;
-  }
-  function setVoto(id){
-    localStorage.setItem('jaVotou', id);
-    document.cookie = 'jaVotou='+id+'; max-age=31536000; path=/';
-  }
-  let jaVotou = getVoto();
-  function renderVotes(){
-    const list = document.getElementById('voteList');
-    if(jaVotou){
-      const escolhida = musicas.find(m=>m.id===jaVotou);
-      list.innerHTML = `<div class="vote-thanks">
-        <div style="font-size:2rem;">🎵💛</div>
-        <p style="font-size:1.1rem;font-weight:700;color:var(--dark);margin:0.5rem 0;">Obrigado pelo seu voto!</p>
-        <p style="font-size:0.85rem;color:var(--muted);font-weight:500;line-height:1.5;">Você votou em <strong>${escolhida?escolhida.nome:'sua música'}</strong>. Vamos manter o resultado em segredo até a grande entrada! 🤍</p>
-      </div>`;
-      return;
-    }
-    list.innerHTML = musicas.map(m=>`
-      <div class="vote-card">
-        <iframe style="border-radius:12px;margin-bottom:0.7rem;" src="https://open.spotify.com/embed/track/${m.track}?utm_source=generator" width="100%" height="80" frameborder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe>
-        <button class="vote-btn" onclick="votar('${m.id}')">Votar nesta 🤍</button>
-      </div>`).join('') + '<p class="vote-hint">Ouça as opções e vote na sua favorita! Cada pessoa vota uma vez. 🎶</p>';
-  }
-  window.votar = async function(id){
-    if(getVoto()) return;
-    setVoto(id); jaVotou = id;
-    try{ const ref=doc(db,"votos",id); await runTransaction(db, async t=>{ const s=await t.get(ref); const c=s.exists()?(s.data().count||0):0; t.set(ref,{count:c+1}); }); }catch(e){}
-    renderVotes();
-  };
-  renderVotes();
 
   // ===== MAPA / LOCALIZAÇÃO =====
   // Noivos: defina aqui as fotos de Luana e Diego (já aparecem destacados)
